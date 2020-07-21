@@ -2,6 +2,7 @@ body {
   bottom: 0;
   margin: 0;
 }
+
 .background {
   background: url(../../images/background-login.jpg) no-repeat center center fixed;
   background-size: cover;
@@ -14,10 +15,12 @@ body {
 }
 
 .box-auth {
-  background-color: purple;
+  background-color: black;
   color: white;
-  margin-left: 5vw;
-  width: 90vw;
+  margin-left: 15vw;
+  opacity: 0.8;
+  padding: 35px 0;
+  width: 70vw;
 }
 
 .header-box-auth {
@@ -34,4 +37,111 @@ body {
 .form-auth {
   display: flex;
   flex-direction: column;
+  margin: 50px 2.5vw;
+}
+
+.form-auth input {
+  cursor: text;
+  height: 20px;
+  outline: none;
+}
+
+.form-auth label {
+  font-size: 25px;
+  margin: 10px 0;
+}
+
+.form-auth button {
+  background-color: orange;
+  border: 1px solid orange;
+  border-radius: 10px;
+  color: white;
+  font-size: 25px;
+  height: 50px;
+  margin: 50px 20px 0 120px;
+  width: 50%;
+}
+
+.forgot-password-auth {
+  font-size: 25px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 414px) {
+  .box-auth {
+    margin-left: 5vw;
+    width: 90vw;
+  }
+
+  .header-box-auth h3 {
+    font-size: 20px;
+  }
+
+  .form-auth {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 2.5vw;
+  }
+
+  .form-auth label {
+    font-size: 20px;
+  }
+
+  .form-auth input {
+    height: 15px;
+  }
+
+  .form-auth button {
+    font-size: 20px;
+    height: 40px;
+    margin: 10px 0px;
+    margin-top: 15px;
+    width: 100%;
+  }
+
+  .forgot-password-auth {
+    margin: 0px;
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 901px) {
+  .logo {
+    height: 50vh;
+    margin: 150px 0;
+    width: 40vw;
+  }
+
+  .background {
+    display: flex;
+  }
+
+  .box-auth {
+    width: 35%;
+  }
+
+  .header-box-auth h3 {
+    font-size: 25px;
+  }
+
+  .form-auth label {
+    font-size: 20px;
+  }
+
+  .form-auth input {
+    height: 15px;
+  }
+
+  .form-auth button {
+    font-size: 25px;
+    height: 40px;
+    margin-left: 6vw;
+    width: 250px;
+  }
+
+  .forgot-password-auth {
+    font-size: 20px;
+    text-align: center;
+  }
 }

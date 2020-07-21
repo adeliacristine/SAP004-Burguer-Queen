@@ -26,8 +26,11 @@ export default () => {
                 <input onChange={handleChange} type="text" />
                 <label>Senha</label>
                 <input onChange={handleChange} type="password" />
-                <button type="submit">{loading ? "Enviando..." : "Enviar"}</button>
+                <button type="submit">{loading ? "Enviando..." : "Login"}</button>
               </form>
+              <div>
+                <h4 className="forgot-password-auth">Esqueceu a senha?</h4>
+              </div>
             </div>
           </div>
         </div>
