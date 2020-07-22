@@ -1,3 +1,6 @@
+import firebase from 'firebase'
+//import Rebase from 're-base'
+
 const firebaseConfig = {
 	apiKey: "AIzaSyAEVuIeshV88Ty07S9I-mVc0bMLHIsvH7E",
 	authDomain: "burger-queen-9aed0.firebaseapp.com",
