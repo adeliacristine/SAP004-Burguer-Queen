@@ -14,7 +14,7 @@
 .background {
   background: url(../../images/background-login.jpg)no-repeat center center fixed;
 	background-size: cover;
-  height: 100vh;
+ /* height: 100vh;*/
   width: 100vw;
 }
 .logo {
@@ -159,7 +159,7 @@ input, select{
   text-decoration: underline;
 }
 
-@media only screen and (max-width: 414px) {
+/*@media only screen and (max-width:600px /*414px) {
   .box-auth {
     margin-left: 5vw;
     width: 90vw;
@@ -195,19 +195,30 @@ input, select{
     margin: 0px;
     font-size: 20px;
   }
-}
-
-@media only screen and (min-width: 901px) {
+}*/
+/* largura minima pra um tablet 600px menor que isso é smatphone, largunra maxima para um tablet
+960 px mair que isso já é um note book */
+@media only screen and (min-width:900px  /*901px*/) {
   .logo {
     height: 50vh;
     margin: 150px 0;
     width: 40vw;
   }
 
-  .background {
+ /* .background {
     display: flex;
-  }
+ }*/
+ .container{
+  display: flex;
+ 
+ }
+ .imgLogo , .box-auth{
+   align-self: center;
+ }
 
+select{
+font-size: smaller;
+ }
   .box-auth {
     width: 35%;
   }
