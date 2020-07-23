@@ -13,7 +13,7 @@
     justify-content: center;
 }
 .RegisterImg{
-	background-image: url('../../fundo.jpeg') ;
+	background-image: url('../../images/background-login.jpg') ;
 	background-attachment: fixed;
 	background-size: cover;
 	background-position: center;

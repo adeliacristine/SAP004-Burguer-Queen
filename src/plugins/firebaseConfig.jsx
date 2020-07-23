@@ -1,5 +1,6 @@
-import firebase from 'firebase'
-//import Rebase from 're-base'
+import * as firebase from "firebase/app"
+import "firebase/auth"
+import "firebase/firestore"
 
 const firebaseConfig = {
 	apiKey: "AIzaSyAEVuIeshV88Ty07S9I-mVc0bMLHIsvH7E",
@@ -11,4 +12,10 @@ const firebaseConfig = {
 	appId: "1:332667717951:web:a3dfa1b0fe5e57beebeb8a",
 	measurementId: "G-J8QWT5MGZ0"
 };
-export default firebaseConfig
+
+let firebaseApp  = firebase.initializeApp(firebaseConfig);
+
+let firebaseAuth = firebaseApp.auth()
+let firebaseFirestore   = firebaseApp.firestore()
+
+export { firebaseAuth, firebaseFirestore }

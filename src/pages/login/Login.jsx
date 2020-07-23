@@ -1,16 +1,10 @@
 import React from 'react';
 
 import './Login.css';
-import logo from '../../images/Logo.png'
 import Form from './Form'
+import logo from '../../images/Logo.png'
 
 export default () => {
-  const [{ values, loading }, handleChange, handleSubmit] = Form()
-
-  const send = () => {
-    console.log(values)
-  }
-
     return (
       <>
         <div className="background">
@@ -21,13 +15,7 @@ export default () => {
               <h3>Registrar</h3>
             </div>
             <div>
-              <form className="form-auth" onSubmit={handleSubmit(send)}>
-                <label>Email</label>
-                <input onChange={handleChange} type="text" />
-                <label>Senha</label>
-                <input onChange={handleChange} type="password" />
-                <button type="submit">{loading ? "Enviando..." : "Login"}</button>
-              </form>
+              <Form/>
               <div>
                 <h4 className="forgot-password-auth">Esqueceu a senha?</h4>
               </div>

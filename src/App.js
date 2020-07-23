@@ -9,8 +9,7 @@ import Login from './pages/login/Login.jsx'
 function App() {
   return (
 <div>
-    <BrowserRouter>
-   {/*     <Route path='/login' component={Register} />*/}
+    <BrowserRouter> 
         <Route path='*'   component={Register} />
     </BrowserRouter>
     <div>
