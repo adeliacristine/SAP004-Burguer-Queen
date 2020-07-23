@@ -26,6 +26,10 @@
 .uiButton{
 	background:rgba(255, 255, 255, 0);
 }
+.button{
+	background: orange;
+    color: white;
+}
 .inputForm{
 	background: #ffffff3f;
 	border-bottom-color: orange;
