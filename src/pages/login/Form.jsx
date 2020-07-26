@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { firebaseAuth } from '../../plugins/firebaseConfig'
+import { firebaseConfig } from '../../plugins/firebaseConfig'
+import "firebase/auth"
 
 export default () => {
   const [email, setEmail] = useState('')
@@ -7,7 +8,7 @@ export default () => {
   
   const login = (event) => {
     event.preventDefault()
-    firebaseAuth.signInWithEmailAndPassword(email, password)
+    firebaseConfig.auth().signInWithEmailAndPassword(email, password)
       .then((response) => {
         console.log(response, "Usuário logado")
       })

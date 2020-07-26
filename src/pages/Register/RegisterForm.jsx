@@ -9,7 +9,7 @@ const RegisterForm = () => {
       <form className="form-auth">
         <select className='inputForm'>
           <option value='Cargo'>Selecione um Cargo</option>
-          <option value='hall'>Garçon/Garçonete</option>
+          <option value='hall'>Garçom/Garçonete</option>
           <option value='kitchen'>Cozinheiro/Auxiliar de Cozinha</option>
         </select>
         <label className='labelColor'>Name</label> 
