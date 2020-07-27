@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './Login.css';
 import { firebaseConfig } from '../../plugins/firebaseConfig'
@@ -6,17 +6,17 @@ import "firebase/auth"
 import Form from './Form'
 import logo from '../../images/Logo.png'
 
-const forgotPassword = () => {
-  firebaseConfig.auth().onAuthStateChanged((user) => {
-    firebaseConfig.auth().useDeviceLanguage();
-    firebaseConfig.auth().sendPasswordResetEmail(user.email)
-      .then(() => {
-        alert('Email enviado')
-      })
-  })
-}
-
 export default () => {
+    const [email, setEmail] = useState('')
+
+    const forgotPassword = () => {
+      firebaseConfig.auth().useDeviceLanguage();
+      firebaseConfig.auth().sendPasswordResetEmail(email)
+        .then(() => {
+          alert('Email enviado')
+      })
+    }
+    
     return (
       <>
         <div className="background">
@@ -27,7 +27,7 @@ export default () => {
               <h3>Registrar</h3>
             </div>
             <div>
-              <Form/>
+              <Form saveEmail={setEmail}/>
               <div>
                 <h4 className="forgot-password-auth" onClick={forgotPassword}>Esqueceu a senha?</h4>
               </div>
