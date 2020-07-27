@@ -1,6 +1,12 @@
 import React/*,{useCallback}*/ from 'react'
 import useSignUpForm from './CustomHooks'
 import '../login/Login.css'
+import BtnP from '../components/button';
+import Input from '../components/input';
+import Label from '../components/label';
+//import Button from 'react-bootstrap/Button';
+
+
 //import { app } from 'firebase';
 //import {withRouter} from 'react-router'
 //import  from ''
@@ -10,12 +16,12 @@ import '../login/Login.css'
 export default () => {
 	const {inputs, handleInputChange, handleSubmit} = useSignUpForm();
 
-const singup =() =>{
+/*const singup =() =>{
   console.log(`User Created!
   Name: ${inputs.name}
   Email: ${inputs.email}
   cargo: ${inputs.office}`);
-  }
+  }*/
 /*  const singup =({history}) =>{
     const handleSingUp = useCallback(async event =>{
       event.preventDefault();
@@ -33,7 +39,7 @@ const singup =() =>{
 	
 	return (
 		<div className='form-columm'>
-		<form  className="form-auth" onSubmit={handleSubmit(singup)}>
+		<form  className="form-auth" onSubmit={handleSubmit()}>
    
       <div>
       <select name='office'className='inputForm' onChange={handleInputChange} value={inputs.office}>
@@ -42,15 +48,15 @@ const singup =() =>{
           <option value='kitchen'>Cozinheiro/Auxiliar de Cozinha</option>
         </select>
       </div>
-        <label>Nome</label>
-        <input type="text" name="name" onChange={handleInputChange} value={inputs.name} required />
-        <label>Email</label>
-        <input type="email" name="email" onChange={handleInputChange} value={inputs.email} required />
-        <label>Senha</label>
-        <input type="password" name="password1" onChange={handleInputChange} value={inputs.password1}/>
-        <label>Conforme sua senha</label>
-        <input type="password" name="password2" onChange={handleInputChange} value={inputs.password2}/>
-        <button className='button' type="submit">Cadastrar</button>
+        <Label title='Nome' />
+        <Input type="text" name="name" change={handleInputChange} value={inputs.name} required />
+        <Label title='Email' />
+        <Input type="email" name="email" change={handleInputChange} value={inputs.email} required />
+        <Label title='Senha' />
+        <Input type="password" name="password1" change={handleInputChange} value={inputs.password1}/>
+        <Label title='Confirme sua senha' />
+        <Input type="password" name="password2" change={handleInputChange} value={inputs.password2}/>
+        <BtnP class='button' type="submit" title='Cadastrar'></BtnP>
     </form>
 	</div>
   )

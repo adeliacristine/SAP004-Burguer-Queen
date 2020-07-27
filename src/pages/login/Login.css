@@ -22,6 +22,9 @@
   height: 20%;
   margin-left: 27%;
 }
+.imgLogo{
+  width: 220px;
+}
 
 .box-auth {
   background-color: #000000c4;
@@ -39,12 +42,12 @@
 .icone {
   height: 30px;
   width: 30px;
- 
+
 }
-.button{
+/*.button{
     color: white;
     background: rgba(255, 255, 255, 0);
-}
+}*/
 li{
   display: flex;
   flex-direction: row;
@@ -142,9 +145,13 @@ input, select{
   color: white;
   font-size: 25px;
   height: 50px;
-  margin: 50px 20px 0 120px;
-  width: 50%;
+ /* margin: 50px 20px 0 120px;*/
+ margin: 30px; 
+ width: 50%;
 }
+
+
+
 .buttonEye{
   background-color: rgba(255, 255, 255, 0);
   color: rgba(255, 255, 255, 0);

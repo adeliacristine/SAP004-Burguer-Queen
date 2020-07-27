@@ -1,6 +1,9 @@
 import React from 'react';
 import './Login.css';
-import Form from './Form'
+import Form from './Form';
+import Input from '../components/input';
+import BtnP from '../components/button';
+import Label from '../components/label';
 
 
 export default () => {
@@ -14,11 +17,11 @@ export default () => {
       <>
       <div className='form-columm'>
       <form className="form-auth" onSubmit={handleSubmit(send)}>
-                <label>Email</label>
-                <input onChange={handleChange} type="text" />
-                <label>Senha</label>
-                <input onChange={handleChange} type="password" />
-                <button className='button' type="submit">{loading ? "Enviando..." : "Login"}</button>
+                <Label title='Email' />
+                <Input change={handleChange} type="text"  />
+                <Label title='Senha' />
+                <Input change={handleChange} type="password" />
+                <BtnP class='button' type="submit" title='Login'>{loading ? "Enviando..." : "Login"}</BtnP>
               </form>
               <div>
                 <h4 className="forgot-password-auth">Esqueceu a senha?</h4>
