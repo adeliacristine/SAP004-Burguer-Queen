@@ -1,7 +1,7 @@
 import React from 'react'
 import {Switch, Link, Route , BrowserRouter} from 'react-router-dom';
 import Login from './Login';
-import Singup from '../Register/singup'
+import Singup from '../Register/signup'
 import logo from '../../images/Logo.png'
 import './Login.css'
 //import { AuthProvider} from '../components/Auth';
@@ -21,15 +21,15 @@ const Inicial = () => {
       <div className="header-box-auth"> 
             <div>
           
-             <BrowserRouter> 
+            <BrowserRouter> 
         <Link className='router-init router-login' to="login" >Login</Link>
         <Link className='router-init' to="singup" >Registrar</Link>
     <Switch>
       <Route path='/login'>
-       <Login />
+      <Login />
         </Route> 
       <Route path='/singup'>
-       <Singup />
+      <Singup />
         </Route> 
     </Switch>
       </BrowserRouter>

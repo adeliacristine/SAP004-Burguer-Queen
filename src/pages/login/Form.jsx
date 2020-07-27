@@ -1,23 +1,36 @@
-import { useState } from 'react'
+import React, { useState } from 'react';
+import { firebaseConfig } from '../../plugins/firebaseConfig'
+import "firebase/auth"
 
-const useForm = (callback) => {
-    const [values, setValues] = useState({ });
-    const [loading, setLoading] = useState(false);
+export default (props) => {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  
+  const functionSetEmail = (element) => {
+    setEmail(element)
+    props.saveEmail(element)
+  }
+
+  const login = (event) => {
+    event.preventDefault()
+    firebaseConfig.auth().signInWithEmailAndPassword(email, password)
+      .then((response) => {
+        console.log(response, "Usuário logado")
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  }
     
-    const handleChange = (event) => {
-        const auxValues = { ...values };
-        auxValues[event.target.name] = event.target.value;
-        setValues(auxValues);
-    }
-
-    const handleSubmit = (callback) => event => {
-        event.preventDefault()
-        setLoading(true);
-        callback();
-        setLoading(false);
-    }
-    return [{ values, loading }, handleChange, handleSubmit];
+    return (
+        <>
+          <form className="form-auth">
+              <label>Email</label>
+              <input type="text" value={email} onChange={e => functionSetEmail(e.target.value)} />
+              <label>Senha</label>
+              <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
+              <button type="submit" onClick={login}>Login</button>
+          </form>
+        </>
+    )
 }
-
-export default useForm
-

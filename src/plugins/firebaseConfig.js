@@ -1,6 +1,6 @@
-import firebase from 'firebase/app'
-import 'firebase/auth'
-//import Rebase from 're-base'
+import * as firebase from "firebase/app"
+import "firebase/auth"
+import "firebase/firestore"
 
 const firebaseConfig = firebase.initializeApp ({
 	apiKey: "AIzaSyAEVuIeshV88Ty07S9I-mVc0bMLHIsvH7E",
@@ -13,9 +13,9 @@ const firebaseConfig = firebase.initializeApp ({
 	measurementId: "G-J8QWT5MGZ0"
 });
 
-/*const db = firebase.database(firebaseConfig)
-const config = Rebase.createClass(db)*/
+// let firebaseApp  = firebase.initializeApp(firebaseConfig);
 
-export const auth = firebaseConfig.auth()
+// let firebaseAuth = firebaseApp.auth()
+// let firebaseFirestore   = firebaseApp.firestore()
 
-export default firebaseConfig
+export { firebaseConfig }
