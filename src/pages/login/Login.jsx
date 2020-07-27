@@ -1,34 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
+
 import './Login.css';
 import Form from './Form';
-import Input from '../components/input';
+/*import Input from '../components/input';
 import BtnP from '../components/button';
-import Label from '../components/label';
+import Label from '../components/label';*/
+
+import { firebaseConfig } from '../../plugins/firebaseConfig'
+import "firebase/auth"
 
 
 export default () => {
-  const [{ values, loading }, handleChange, handleSubmit] = Form()
+    const [email, setEmail] = useState('')
 
-  const send = () => {
-    console.log(values)
-  }
-
+    const forgotPassword = () => {
+      firebaseConfig.auth().useDeviceLanguage();
+      firebaseConfig.auth().sendPasswordResetEmail(email)
+        .then(() => {
+          alert('Email enviado')
+      })
+    }
+    
     return (
-      <>
+      
       <div className='form-columm'>
-      <form className="form-auth" onSubmit={handleSubmit(send)}>
-                <Label title='Email' />
-                <Input change={handleChange} type="text"  />
-                <Label title='Senha' />
-                <Input change={handleChange} type="password" />
-                <BtnP class='button' type="submit" title='Login'>{loading ? "Enviando..." : "Login"}</BtnP>
-              </form>
+            <div>
+              <Form saveEmail={setEmail}/>
               <div>
-                <h4 className="forgot-password-auth">Esqueceu a senha?</h4>
+                <h4 className="forgot-password-auth" onClick={forgotPassword}>Esqueceu a senha?</h4>
               </div>
-
-      </div>
-            
-      </>
+            </div>
+            </div>
+          
+       
+      
   )
 }
