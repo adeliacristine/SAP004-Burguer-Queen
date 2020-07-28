@@ -4,36 +4,13 @@ import "firebase/auth";
 import Input from '../components/input/input';
 import BtnP from '../components/button/button';
 import Label from '../components/label/label';
-
-/*const errorMessages = {
-  "auth/user-not-found":
-    'Usuário não cadastrado',
-  "auth/wrong-password":
-    'Senha incorreta',
-  "auth/invalid-email":
-    'E-mail inválido',
-};*/
-/*const printError = (error) => {
-  document.getElementById(
-    "login-error"
-  ).innerHTML = `${errorMessages[error]}`;
-};*/
-
-
+import errorCode from './Firabase_error';
 
 export default (props) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  let [errorMsg, setErrorMsg] = useState('')
 
-  const errorCode = {
-    "auth/user-not-found":
-      'Usuário não cadastrado',
-    "auth/wrong-password":
-      'Senha incorreta',
-    "auth/invalid-email":
-      'E-mail inválido',
-  };
-  
   const functionSetEmail = (element) => {
     setEmail(element)
     props.saveEmail(element)
@@ -46,8 +23,12 @@ export default (props) => {
         console.log(response, "Usuário logado")
       })
       .catch((error) => {
-            console.log(errorCode[error.code])
-        
+        if (errorCode[error.code]){
+          console.log(errorCode[error.code])
+          setErrorMsg(errorCode[error.code])
+        } else {
+          (setErrorMsg('Ocorreu um erro. Tente novamente!'))
+        }        
         
       })
   }
@@ -60,6 +41,7 @@ export default (props) => {
               <Input className='input' type="password" value={password} onChange={e => setPassword(e.target.value)} />
               <BtnP className='btnLogCad btn btn-warning' type="submit" title='Login' onClick={login}>Login</BtnP>
           </form>
+         <div>{errorMsg}</div>
         </>
     )
 }

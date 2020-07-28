@@ -7,8 +7,8 @@ import BtnP from '../components/button/button'
 import Label from '../components/label/label'
 import Input from '../components/input/input'
 import '../components/select/select.css'
-
 import '../login/Login.css'
+import errorCode from '../login/Firabase_error'
 
 export default () => {
 
@@ -17,11 +17,14 @@ export default () => {
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
     const [post, setPost] = useState('')
+    let [errorMsg, setErrorMsg] = useState('')
+    const [errorPass, setErrorPass] = useState('')
 
     const createLogin = (event) => {
       event.preventDefault()
       if (password !== confirmPassword) {
-        alert('Senhas não conferem')
+      setErrorPass('Senhas não conferem! Tente novamente.')
+        /*alert('Senhas não conferem')*/
       } else {
         firebaseConfig.auth().createUserWithEmailAndPassword(email, password)
         .then((response) => {
@@ -37,7 +40,11 @@ export default () => {
               console.log('deu certo',response)
         })
         .catch((error) => {
-          console.log(error)
+          if (errorCode[error.code]){
+            setErrorMsg(errorCode[error.code])
+          } else {
+            (setErrorMsg('Ocorreu um erro. Tente novamente'))
+          }    
         })
       }
     }
@@ -52,17 +59,19 @@ export default () => {
             <option className='option' value='kitchen'>Cozinheiro/Auxiliar de Cozinha</option>
           </select>
         </div>
-        <label class='label' title='Nome' />
+          <Label class='label'>Nome</Label>       
           <Input className='input' type="text" name="name" value={name} onChange={e => setName(e.target.value)} required />
-          <Label class='label' title='Email' />
+          <Label className='label'>Email</Label>        
           <Input className='input' type="email" name="email" value={email} onChange={e => setEmail(e.target.value)} required />
-          <Label class='label' title='Senha' />
+          <Label className='label'>Senha</Label>        
           <Input className='input' type="password" name="password" value={password} onChange={e => setPassword(e.target.value)} />
-          <Label class='label' title='Confirme sua senha' />
+          <Label className='label' >Confirme sua senha</Label>
           <Input className='input' type="password" name="confirm-password" value={confirmPassword} 
             onChange={e => setConfirmPassword(e.target.value)} />
           <BtnP className='btnLogCad btn-warning' type="submit" onClick={createLogin}>Cadastrar</BtnP>
       </form>
+      <div>{errorPass}</div>
+      <div>{errorMsg}</div>
     </div>
     )
   }
