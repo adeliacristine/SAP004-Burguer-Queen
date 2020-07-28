@@ -1,5 +1,5 @@
 import React from 'react'
-import BtnP from './button'
+import BtnP from './button/button'
 //import Input from './input'
 const Resumo = () => {
   return (

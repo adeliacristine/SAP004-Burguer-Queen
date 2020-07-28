@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import BtnP from './button'
+import BtnP from './button/button'
 import Menu from './menu'
 
 
@@ -16,11 +16,8 @@ const [open, setOpen] = useState(true);
 	return (
 	<div>
     <div className='bg-warning d-flex flex-direction-row justify-content-between size'>
-<BtnP type='button' class='btn btn-lg btn-light btnHall' click={onClick} title='Meus Pedidos'></BtnP>
-<BtnP type='button'class='btn btn-lg btn-light btnHall' click={onClick} title='Pedidos Enviados'></BtnP>
-{/* <Button className='btn btn-lg btn-light btnHall' onClick={onClick}>Meus Pedidos</Button>
-  <button className='btn btn-lg btn-light btnHall' onClick={onClick}>Pedidos Enviados</button*/}>
-
+<BtnP type='button' class='btn btn-lg btn-light btnHall' onClick={onClick} title='Meus Pedidos'></BtnP>
+<BtnP type='button'class='btn btn-lg btn-light btnHall' onClick={onClick} title='Pedidos Enviados'></BtnP>
 	
 	</div>
 
@@ -35,13 +32,13 @@ const [open, setOpen] = useState(true);
           <h2>Pedidos enviados para aCozinha.</h2>
       </div>
       <div>
-<button>XXXXXXXXXXXXXXXX</button>
+<BtnP>XXXXXXXXXXXXXXXX</BtnP>
       </div>
       <div className='bg-warning'>
           <h2>Pedidos Prontos</h2>
       </div>
       <div>
-<button>XXXXXXXXXXXXXXXX</button>
+<BtnP>XXXXXXXXXXXXXXXX</BtnP>
       </div>
 
       </div>      

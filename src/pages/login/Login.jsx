@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-
 import './Login.css';
 import Form from './Form';
-/*import Input from '../components/input';
-import BtnP from '../components/button';
-import Label from '../components/label';*/
-
 import { firebaseConfig } from '../../plugins/firebaseConfig'
 import "firebase/auth"
 
@@ -17,13 +12,15 @@ export default () => {
       firebaseConfig.auth().useDeviceLanguage();
       firebaseConfig.auth().sendPasswordResetEmail(email)
         .then(() => {
-          alert('Email enviado')
+          /*alert('Email enviado')*/
+          console.log('você está logado')
+      })
+      .catch((error)=>{
+        console.log(error)
       })
     }
-    
     return (
-      
-      <div className='form-columm'>
+      <div>
             <div>
               <Form saveEmail={setEmail}/>
               <div>
@@ -31,8 +28,5 @@ export default () => {
               </div>
             </div>
             </div>
-          
-       
-      
   )
 }

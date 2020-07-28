@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { firebaseConfig } from '../../plugins/firebaseConfig'
-import "firebase/auth"
-import Input from '../components/input';
-import BtnP from '../components/button';
-import Label from '../components/label';
+import "firebase/auth";
+import Input from '../components/input/input';
+import BtnP from '../components/button/button';
+import Label from '../components/label/label';
+
 
 export default (props) => {
   const [email, setEmail] = useState('')
@@ -24,24 +25,14 @@ export default (props) => {
         console.log(error)
       })
   }
-    
     return (
         <>
-
-{/*<form className="form-auth" onSubmit={handleSubmit(send)}>
-                <Label title='Email' />
-                <Input change={handleChange} type="text"  />
-                <Label title='Senha' />
-                <Input change={handleChange} type="password" />
-                <BtnP class='button' type="submit" title='Login'>{loading ? "Enviando..." : "Login"}</BtnP>
-              </form>*/}
-
-          <form className="form-auth">
-              <Label title='Email'></Label>
-              <Input type="text" value={email} onChange={e => functionSetEmail(e.target.value)} />
-              <Label tille='Senha'></Label>
-              <Input type="password" value={password} onChange={e => setPassword(e.target.value)} />
-              <BtnP type="submit" title='Login' click={login}></BtnP>
+          <form>
+              <Label class ='label'title='Email'></Label>
+              <Input class='input' type="text" value={email} onChange={e => functionSetEmail(e.target.value)} />
+              <Label class ='label' title='Senha'></Label>
+              <Input class='input' type="password" value={password} onChange={e => setPassword(e.target.value)} />
+              <BtnP class='btnLogCad btn btn-warning' type="submit" title='Login' click={login}></BtnP>
           </form>
         </>
     )

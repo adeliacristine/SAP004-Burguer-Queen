@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import BtnP from './button'
+import BtnP from './button/button'
 import Resumo from './resumo'
 
 const Menu = () => {

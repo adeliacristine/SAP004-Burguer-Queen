@@ -1,6 +1,6 @@
 import React from 'react'
 import logo from '../images/Logo.png';
-import BtnP from './components/button';
+import BtnP from './components/button/button';
 //import Input from './components/input';
 import Sector from './components/ sector'
 
@@ -10,7 +10,7 @@ const Hall = ()=>{
 <div className=''>{/* container-fluid p-0 */}
 <header className='black d-flex justify-content-between'> 
 <div>  
-	<img className="imgLogo " src={logo} alt="logo"/>
+	<img className="logo " src={logo} alt="logo"/>
 </div>
   <div>
  <BtnP type='button' class='btn btn-warning btn-lg align-self-center btnLogout'title='Sair'></BtnP>  

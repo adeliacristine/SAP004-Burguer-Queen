@@ -15,32 +15,12 @@ import Label from '../components/label';
 
 export default () => {
 	const {inputs, handleInputChange, handleSubmit} = useSignUpForm();
-
-/*const singup =() =>{
-  console.log(`User Created!
-  Name: ${inputs.name}
-  Email: ${inputs.email}
-  cargo: ${inputs.office}`);
-  }*/
-/*  const singup =({history}) =>{
-    const handleSingUp = useCallback(async event =>{
-      event.preventDefault();
-      const {email, password} = event.target.elements;
-      try{
-        await app.auth()
-        .createUserWithEmailAndPassword(email.value, password.value);
-        history.push ('/');
-      } catch(error){
-        alert(error);
-      }
-      }, [history]);*/
-  
-  
+ 
 	
 	return (
 		<div className='form-columm'>
 		<form  className="form-auth" onSubmit={handleSubmit()}>
-   
+
       <div>
       <select name='office'className='inputForm' onChange={handleInputChange} value={inputs.office}>
           <option value='Cargo'>Selecione um Cargo</option>
