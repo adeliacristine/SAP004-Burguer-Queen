@@ -5,6 +5,8 @@ import { firebaseConfig } from '../../plugins/firebaseConfig'
 import "firebase/auth"
 
 
+
+
 export default () => {
     const [email, setEmail] = useState('')
 
@@ -16,7 +18,7 @@ export default () => {
           console.log('você está logado')
       })
       .catch((error)=>{
-        console.log(error)
+          console.log(error)
       })
     }
     return (

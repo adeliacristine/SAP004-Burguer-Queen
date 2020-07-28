@@ -16,8 +16,8 @@ const [open, setOpen] = useState(true);
 	return (
 	<div>
     <div className='bg-warning d-flex  justify-content-around size'>
-<BtnP type='button' class='btn btn-lg btn-light btnHall' click={onClick} title='Meus Pedidos'></BtnP>
-<BtnP type='button'class='btn btn-lg btn-light btnHall' click={onClick} title='Pedidos Enviados'></BtnP>
+<BtnP type='button' className='btn btn-lg btn-light btnHall' onClick={onClick} >Meus Pedidos</BtnP>
+<BtnP type='button'className='btn btn-lg btn-light btnHall' onClick={onClick} >Pedidos Enviados</BtnP>
 	
 	</div>
 

@@ -3,9 +3,9 @@ import { useState } from 'react'
 import { firebaseConfig } from '../../plugins/firebaseConfig'
 import "firebase/auth"
 import "firebase/firestore"
-/*import BtnP from '../components/button/button'
+import BtnP from '../components/button/button'
 import Label from '../components/label/label'
-import Input from '../components/input/input'*/
+import Input from '../components/input/input'
 import '../components/select/select.css'
 
 import '../login/Login.css'
@@ -34,7 +34,6 @@ export default () => {
                   post,
                 })
             })
-              /*alert('Criado', response)*/
               console.log('deu certo',response)
         })
         .catch((error) => {
@@ -48,21 +47,21 @@ export default () => {
       <form  className="form-auth">
         <div>
         <select name='office'className='select' value={post} onChange={e => setPost(e.target.value)}>
-            <option value='Cargo'>Selecione um Cargo</option>
-            <option value='hall'>Garçom/Garçonete</option>
-            <option value='kitchen'>Cozinheiro/Auxiliar de Cozinha</option>
+            <option className='option' value='Cargo'>Selecione um Cargo</option>
+            <option className='option'value='hall'>Garçom/Garçonete</option>
+            <option className='option' value='kitchen'>Cozinheiro/Auxiliar de Cozinha</option>
           </select>
         </div>
-        <label className='label' title='Nome'>Nome</label>
-          <input className='input' type="text" name="name" value={name} onChange={e => setName(e.target.value)} required />
-          <label className='label' title='Email'>Email</label>
-          <input className='input' type="email" name="email" value={email} onChange={e => setEmail(e.target.value)} required />
-          <label className='label' title='Senha'>Senha</label>
-          <input className='input' type="password" name="password" value={password} onChange={e => setPassword(e.target.value)} />
-          <label className='label' title='Confirme sua senha' >senha</label>
-          <input className='input' type="password" name="confirm-password" value={confirmPassword} 
+        <label class='label' title='Nome' />
+          <Input className='input' type="text" name="name" value={name} onChange={e => setName(e.target.value)} required />
+          <Label class='label' title='Email' />
+          <Input className='input' type="email" name="email" value={email} onChange={e => setEmail(e.target.value)} required />
+          <Label class='label' title='Senha' />
+          <Input className='input' type="password" name="password" value={password} onChange={e => setPassword(e.target.value)} />
+          <Label class='label' title='Confirme sua senha' />
+          <Input className='input' type="password" name="confirm-password" value={confirmPassword} 
             onChange={e => setConfirmPassword(e.target.value)} />
-          <button className='btnLogCad btn-warning' type="submit" title='Cadastrar' onClick={createLogin}>cadastrar</button>
+          <BtnP className='btnLogCad btn-warning' type="submit" onClick={createLogin}>Cadastrar</BtnP>
       </form>
     </div>
     )
