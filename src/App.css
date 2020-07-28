@@ -1,11 +1,42 @@
-/*.App {
-  text-align: center;
-}*/
+*{
+	padding:0;
+	margin:0;
+	vertical-align:baseline;
+	list-style:none;
+	border:0
+  }
+  .App {
+    text-align: center;
+  }
+  body{
+    background:rgba(255, 166, 0, 0.472);
+  }
+  .black{
+    background: black;
+  }
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+.background {
+    background: url(./images/background-login.jpg)no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+  }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo {
+    width: 40%;
+    height: 20%;
+    margin-left: 27%;
+  }
+.imgLogo{
+  width: 40%;
 }
+
+
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

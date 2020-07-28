@@ -1,0 +1,20 @@
+.input{
+	border-radius: 15px;
+  color: white;
+  background: #ff000000;
+  font-size: larger;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 50px;
+  border-bottom-color: orange;
+  border-style: none;
+  border-bottom-style: solid;
+  border-bottom-width: medium;
+}
+.formResumo{
+  display: block; 
+    padding: .375rem .75rem;
+    color: black;
+    background-color: white;
+    border-radius: 20px;
+  
+}
