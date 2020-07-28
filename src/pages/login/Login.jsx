@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-
 import './Login.css';
+import Form from './Form';
 import { firebaseConfig } from '../../plugins/firebaseConfig'
 import "firebase/auth"
-import Form from './Form'
-import logo from '../../images/Logo.png'
+
 
 export default () => {
     const [email, setEmail] = useState('')
@@ -13,27 +12,21 @@ export default () => {
       firebaseConfig.auth().useDeviceLanguage();
       firebaseConfig.auth().sendPasswordResetEmail(email)
         .then(() => {
-          alert('Email enviado')
+          /*alert('Email enviado')*/
+          console.log('você está logado')
+      })
+      .catch((error)=>{
+        console.log(error)
       })
     }
-    
     return (
-      <>
-        <div className="background">
-          <img className="logo" src={logo} alt="logo"/>
-          <div className="box-auth">
-            <div className="header-box-auth"> 
-              <h3>Login</h3>
-              <h3>Registrar</h3>
-            </div>
+      <div>
             <div>
               <Form saveEmail={setEmail}/>
               <div>
                 <h4 className="forgot-password-auth" onClick={forgotPassword}>Esqueceu a senha?</h4>
               </div>
             </div>
-          </div>
-        </div>
-      </>
+            </div>
   )
 }

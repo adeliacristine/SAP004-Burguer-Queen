@@ -1,28 +1,3 @@
-*{
-	padding:0;
-	margin:0;
-	vertical-align:baseline;
-	list-style:none;
-	border:0
-	}
-
-/*body {
-  bottom: 0;
-  margin: 0;
-}*/
-
-.background {
-  background: url(../../images/background-login.jpg)no-repeat center center fixed;
-	background-size: cover;
- /* height: 100vh;*/
-  width: 100vw;
-}
-.logo {
-  width: 40%;
-  height: 20%;
-  margin-left: 27%;
-}
-
 .box-auth {
   background-color: #000000c4;
   color: white;
@@ -33,23 +8,6 @@
   border-radius: 10px;
 }
 
-.header-box-auth {
-  display: flex;
-}
-.icone {
-  height: 30px;
-  width: 30px;
- 
-}
-.button{
-    color: white;
-    background: rgba(255, 255, 255, 0);
-}
-li{
-  display: flex;
-  flex-direction: row;
-}
-
 .header-box-auth  {
   color: white;
   font-size: 35px;
@@ -57,101 +15,14 @@ li{
   text-decoration: underline;
   flex-direction: column;
 }
-/*h3{
-  color: white;
-  font-size: 35px;
-  margin: 30px 20px;
-  text-decoration: underline;
-  flex-direction: column;
-}*/
-.router-init{
-  color:white;
-}
-.router-init:hover {
-  color: orange;
-  text-decoration: none;
-}
 
-option{
-  background-color: black;
-  color: white;
-  font-size: 50%;
-}
-option::selection{
-  color:orange;
-
-}
-label{
-  color:orange;
-  font-size: 25px;
-  height: 50px;
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 3px 0;
-}
-input, select{
-  border-radius: 15px;
-  color: white;
-  background: #ff000000;
-  font-size: larger;
-  font-family: Arial, Helvetica, sans-serif;
-  height: 50px;
-  border-bottom-color: orange;
-  border-style: none;
-  border-bottom-style: solid;
-  border-bottom-width: medium;
-}
-.router-login{
-  margin-right: 25px;
-}
-.form-columm{
-  display:flex;
-  flex-direction: column;
-
-}
 .form-auth {
   display: flex;
   flex-direction: column;
   margin: 50px 2.5vw;
-}
-
-/*.form-auth input {
-  cursor: text;
-  height: 20px;
-  outline: none;
-}*/
-
-.form-auth {
   font-size: 25px;
   margin: 10px 0;
 }
-
-/*.form-auth{
-  background-color: orange;
-  border: 1px solid orange;
- border-radius: 10px;
-  color: white;
-  font-size: 25px;
-  height: 50px;
-  margin: 50px 20px 0 120px;
-  width: 50%;
-}*/
-.button{
-  background-color: orange;
-  border: 1px solid orange;
-  border-radius: 10px;
-  color: white;
-  font-size: 25px;
-  height: 50px;
-  margin: 50px 20px 0 120px;
-  width: 50%;
-}
-.buttonEye{
-  background-color: rgba(255, 255, 255, 0);
-  color: rgba(255, 255, 255, 0);
-  margin-left: -56px;
-  border-radius: 15px;
-}
-
 
 .forgot-password-auth {
   font-size: 25px;
@@ -198,16 +69,16 @@ input, select{
 }*/
 /* largura minima pra um tablet 600px menor que isso é smatphone, largunra maxima para um tablet
 960 px mair que isso já é um note book */
-@media only screen and (min-width:900px  /*901px*/) {
+/*@media only screen and (min-width:900px ) {
   .logo {
     height: 50vh;
     margin: 150px 0;
     width: 40vw;
   }
 
- /* .background {
+ .background {
     display: flex;
- }*/
+ }
  .container{
   display: flex;
  
@@ -247,3 +118,4 @@ font-size: smaller;
     text-align: center;
   }
 }
+*/
