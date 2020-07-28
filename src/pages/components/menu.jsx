@@ -24,7 +24,7 @@ const Menu = () => {
             <BtnP type='button' class='btn btn-lg btn-light btnFood' title='Misto Quente R$10,00'></BtnP>
             <BtnP type='button' class='btn btn-lg btn-light btnFood' title='Suco de fruta natural R$7,00'></BtnP>
           </div>
-          <div className='border bg-ligth'>
+          <div className='border bg-warning'>
             <Resumo />
           
           </div>

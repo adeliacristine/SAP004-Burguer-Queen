@@ -1,7 +1,7 @@
 import React from 'react'
-import {Dropdown} from 'react-bootstrap'
+//import {Dropdown} from 'react-bootstrap'
 
-const Select = props =>{
+/*const Select = props =>{
 	return(
 		<DropdownButton name={props.name} className={props.class} onClick={props.click}>
 		<Dropdown.ItemText>{props.title}</Dropdown.ItemText>
@@ -11,7 +11,7 @@ const Select = props =>{
 		)
 }
 export default Select
-
+*/
 
 
 
