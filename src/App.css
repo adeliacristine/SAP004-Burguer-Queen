@@ -9,6 +9,9 @@
     text-align: center;
   }
   body{
+    background:rgba(255, 166, 0, 0.472);
+  }
+  .black{
     background: black;
   }
   .App-logo {

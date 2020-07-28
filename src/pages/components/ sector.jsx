@@ -15,9 +15,9 @@ const [open, setOpen] = useState(true);
 	};
 	return (
 	<div>
-    <div className='bg-warning d-flex flex-direction-row justify-content-between size'>
-<BtnP type='button' class='btn btn-lg btn-light btnHall' onClick={onClick} title='Meus Pedidos'></BtnP>
-<BtnP type='button'class='btn btn-lg btn-light btnHall' onClick={onClick} title='Pedidos Enviados'></BtnP>
+    <div className='bg-warning d-flex  justify-content-around size'>
+<BtnP type='button' class='btn btn-lg btn-light btnHall' click={onClick} title='Meus Pedidos'></BtnP>
+<BtnP type='button'class='btn btn-lg btn-light btnHall' click={onClick} title='Pedidos Enviados'></BtnP>
 	
 	</div>
 

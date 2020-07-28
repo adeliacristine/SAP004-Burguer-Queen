@@ -10,3 +10,11 @@
   border-bottom-style: solid;
   border-bottom-width: medium;
 }
+.formResumo{
+  display: block; 
+    padding: .375rem .75rem;
+    color: black;
+    background-color: white;
+    border-radius: 20px;
+  
+}
