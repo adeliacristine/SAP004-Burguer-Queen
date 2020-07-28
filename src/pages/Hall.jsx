@@ -35,7 +35,7 @@ const Hall = ()=>{
 	<img className="imgLogo " src={logo} alt="logo"/>
 </div>
   <div>
- <BtnP type='button' click={singOut} size="lg" class='btn btn-warning btn-lg align-self-center btnLogout'title='Sair'></BtnP>  
+ <BtnP type='button' onClick={singOut} size="lg" className='btn btn-warning btn-lg align-self-center btnLogout'>Sair</BtnP>  
   </div>
 	</header>
 	<div className=" justify-content-center color d-flex">

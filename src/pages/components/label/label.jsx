@@ -3,7 +3,7 @@ import './label.css'
 
 const Label = props=>{
 	return(
-<label className={props.class}>{props.title}</label>
+<label {...props}/>
 	)
 }
 export default Label

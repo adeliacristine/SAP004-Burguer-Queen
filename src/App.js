@@ -12,10 +12,10 @@ function App() {
 
 <div className='container-fluid p-0' >
 
-   <BrowserRouter>
+  <BrowserRouter>
         <Route path='*' component={Inicial} />
     </BrowserRouter>
-{/* <Hall />*/}
+ {/*<Hall />*/}
   
 
 </div>
