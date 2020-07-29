@@ -3,6 +3,7 @@ import './Login.css';
 import Form from './Form';
 import { firebaseConfig } from '../../plugins/firebaseConfig'
 import "firebase/auth"
+import '../../App.css'
 
 
 
@@ -29,7 +30,11 @@ export default () => {
               <div>
                 <h4 className="forgot-password-auth" onClick={forgotPassword}>Esqueceu a senha?</h4>
               </div>
-    <div>{passwordForgot}, {passwordForgotError}</div>
+
+              <div className='msgError'>
+              <p>{passwordForgot} {passwordForgotError}</p>
+              </div>
+
             </div>
             </div>
   )
