@@ -5,6 +5,7 @@ import Input from '../components/input/input';
 import BtnP from '../components/button/button';
 import Label from '../components/label/label';
 import errorCode from './Firabase_error';
+import '../../App.css'
 
 export default (props) => {
   const [email, setEmail] = useState('')
@@ -39,9 +40,11 @@ export default (props) => {
               <Input className='input' type="text" value={email} onChange={e => functionSetEmail(e.target.value)} />
               <Label className ='label'>Senha</Label>
               <Input className='input' type="password" value={password} onChange={e => setPassword(e.target.value)} />
-              <BtnP className='btnLogCad btn btn-warning' type="submit" title='Login' onClick={login}>Login</BtnP>
+              <BtnP className='btnLogCad btn-warning' type="submit" title='Login' onClick={login}>Login</BtnP>
           </form>
-         <div>{errorMsg}</div>
+         <div className='msgError'>
+           <p>{errorMsg}</p>
+           </div>
         </>
     )
 }

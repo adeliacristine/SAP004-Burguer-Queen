@@ -1,5 +1,4 @@
-import React/*,{useCallback}*/ from 'react'
-import { useState } from 'react'
+import React,{useState} from 'react'
 import { firebaseConfig } from '../../plugins/firebaseConfig'
 import "firebase/auth"
 import "firebase/firestore"
@@ -9,6 +8,7 @@ import Input from '../components/input/input'
 import '../components/select/select.css'
 import '../login/Login.css'
 import errorCode from '../login/Firabase_error'
+import '../../App.css'
 
 export default () => {
 
@@ -23,8 +23,7 @@ export default () => {
     const createLogin = (event) => {
       event.preventDefault()
       if (password !== confirmPassword) {
-      setErrorPass('Senhas não conferem! Tente novamente.')
-        /*alert('Senhas não conferem')*/
+      setErrorPass('Senhas não conferem. Tente novamente!')
       } else {
         firebaseConfig.auth().createUserWithEmailAndPassword(email, password)
         .then((response) => {
@@ -37,13 +36,12 @@ export default () => {
                   post,
                 })
             })
-              console.log('deu certo',response)
         })
         .catch((error) => {
           if (errorCode[error.code]){
             setErrorMsg(errorCode[error.code])
           } else {
-            (setErrorMsg('Ocorreu um erro. Tente novamente'))
+            (setErrorMsg('Ocorreu um erro. Tente novamente!'))
           }    
         })
       }
@@ -70,8 +68,11 @@ export default () => {
             onChange={e => setConfirmPassword(e.target.value)} />
           <BtnP className='btnLogCad btn-warning' type="submit" onClick={createLogin}>Cadastrar</BtnP>
       </form>
-      <div>{errorPass}</div>
-      <div>{errorMsg}</div>
+      <div className='msgError'>
+      <p>{errorPass} {errorMsg}</p>
+      </div>
+    
+      
     </div>
     )
   }
