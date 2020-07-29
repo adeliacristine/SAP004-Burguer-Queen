@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 //import Hall from './pages/Hall';
-import Inicial from './pages/login/Index';
+import Inicial from '../src/Route/Index';
 //import  'bootstrap / dist / css / bootstrap.min.css' ;
 
 
@@ -12,11 +12,11 @@ function App() {
 
 <div className='container-fluid p-0' >
 
-   <BrowserRouter>
+  <BrowserRouter>
         <Route path='*' component={Inicial} />
     </BrowserRouter>
-{/* <Hall />
-  */}
+ {/*<Hall />*/}
+  
 
 </div>
   );

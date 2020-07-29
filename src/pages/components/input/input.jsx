@@ -3,7 +3,7 @@ import './input.css'
 
 const Input = props =>{
 	return(
-<input className={props.class} type={props.type} name={props.name} placeholder={props.text}  onChange={props.onchange}></input>
+<input {...props}/>
 	)
 }
 export default Input

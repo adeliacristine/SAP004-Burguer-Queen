@@ -5,6 +5,8 @@ import { firebaseConfig } from '../../plugins/firebaseConfig'
 import "firebase/auth"
 
 
+
+
 export default () => {
     const [email, setEmail] = useState('')
     const [passwordForgot, setPasswordForgot] = useState('')

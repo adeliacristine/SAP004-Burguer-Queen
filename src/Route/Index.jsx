@@ -1,11 +1,11 @@
 import React from 'react'
 import {Switch, Route ,Link, BrowserRouter} from 'react-router-dom';
-import Login from './Login';
-import Singup from '../Register/signup'
-import logo from '../../images/Logo.png'
-import '../../App.css'
+import Login from '../pages/login/Login';
+import Singup from '../pages/Register/signup'
+import logo from '../../src/images/Logo.png'
+import '../App.css'
 //import Lk from '../components/link/link'
-import '../components/link/link.css'
+import '../../src/pages/components/link/link.css';
 
 const Inicial = () => {
   return (
