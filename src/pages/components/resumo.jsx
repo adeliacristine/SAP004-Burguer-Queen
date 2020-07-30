@@ -5,8 +5,8 @@ import Label from '../components/label/label'
 
 const Resumo = () => {
   return (
-    <div>
-      <div className='pdd'>
+    <div className='border bg-warning'>
+      <div >
         <h1 className=' '>Resumo</h1>
         <Label>Nome do Cliente</Label>
         <Input type="text" className="formResumo" required></Input>

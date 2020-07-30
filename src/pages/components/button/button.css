@@ -3,7 +3,7 @@
 		font-size: 25px;
 		height: 50px;
 		margin: 30px;	
-		width: 75%;
+		width: 50%;
 }
 button:hover {
 	color:black;
@@ -21,13 +21,6 @@ button:hover {
 	height: 50px;
 	margin: 10px;	
 }
-.btnFood{
-	border-radius: 10px;
-    font-size: 20px;
-    height: 75px;
-	margin: 10px;
-	margin:20px;	
-}
 .buttonEye{
 	background-color: rgba(255, 255, 255, 0);
 	color: rgba(255, 255, 255, 0);
@@ -39,4 +32,28 @@ button:hover {
 }
 .btnLogout{
 	margin-top: 30%;
+	font-size: 25px;
+}
+
+.btnHeader {
+  color: var(--white);
+  border: 1px solid var(--white);
+  box-sizing: border-box;
+  cursor: pointer;
+  padding: 16px 24px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  outline: none;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  transition: opacity .3s;
+}
+.btnHeader:hover,
+.btnHeader:focus {
+  opacity: .5;
+}
+.btnFood{
+	margin-right: 20px;
 }

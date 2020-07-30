@@ -10,10 +10,12 @@
 
 .header-box-auth  {
   color: white;
-  font-size: 35px;
-  margin: 30px 20px;
-  text-decoration: underline;
-  flex-direction: column;
+/*  font-size: 35px;*/
+/*  margin: 30px 20px;*/
+margin-top: 10px;
+ /* text-decoration: underline;*/
+
+/*text-align:center;*/
 }
 
 .form-auth {

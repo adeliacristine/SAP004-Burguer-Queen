@@ -1,0 +1,22 @@
+.sectorCard{
+	display: flex;
+	background-color: gray;
+	color:white;
+	font-size: 20px;
+}
+.sectorCardBody{
+	display: flex;
+	justify-content:space-between ;
+	background-color: #8080804d;
+    color: black;
+    font-size: 30px;
+	border-bottom: 2px solid orange;
+	padding: 6px;
+}
+
+.sectorCardName{
+	background-color:orange;
+	color:black;
+	font-size: 30px;
+	padding:2px;
+}

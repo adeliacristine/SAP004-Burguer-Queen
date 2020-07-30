@@ -1,8 +1,7 @@
 import React, {useState} from 'react'
-import BtnP from './button/button'
-import Menu from './menu'
-
-
+import BtnP from '../button/button'
+import Menu from '../menu/menu'
+import './sector.css'
 
 
 const Sector =()=>{
@@ -15,14 +14,12 @@ const [open, setOpen] = useState(true);
 	};
 	return (
 	<div>
-    <div className='bg-warning d-flex  justify-content-around size'>
+    <div className='bg-dark d-flex  justify-content-around size sector'>
 <BtnP type='button' className='btn btn-lg btn-light btnHall' onClick={onClick} >Meus Pedidos</BtnP>
 <BtnP type='button'className='btn btn-lg btn-light btnHall' onClick={onClick} >Pedidos Enviados</BtnP>
-	
-	</div>
-
+		</div>
 		{open &&(
-<div className='d-flex'>
+<div >
 <Menu />
 </div>
 			

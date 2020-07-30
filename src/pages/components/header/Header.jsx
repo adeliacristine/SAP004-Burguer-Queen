@@ -5,6 +5,7 @@ import BtnP from '../button/button';
 import {firebaseConfig} from '../../../plugins/firebaseConfig'
 import "firebase/auth"
 import "firebase/firestore"
+import './header.css'
 
 const singOut=(event)=>{
 	event.preventDefault()
@@ -23,12 +24,12 @@ const singOut=(event)=>{
 
 function Header() {
   return (
-  <Card.Header className='d-flex black'>
+  <Card.Header className='header black'>
 	  <div>  
 	<img className="imgLogo " src={logo} alt="logo"/>
 </div>
   <div>
- <BtnP type='button' onClick={singOut} size="lg" className='btn btn-warning btn-lg align-self-center btnLogout'>Sair</BtnP>  
+ <BtnP type='button' onClick={singOut} size="lg" className='btnHeader btn-warning'>Sair</BtnP>  
   </div>
 	  
   </Card.Header> 

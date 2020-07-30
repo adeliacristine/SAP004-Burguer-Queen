@@ -8,16 +8,10 @@
   .App {
     text-align: center;
   }
-  body{
-    background:rgba(255, 166, 0, 0.472);
-  }
-  .black{
-    background: black;
-  }
-  .App-logo {
-    height: 40vmin;
-    pointer-events: none;
-  }
+ 
+  .color{
+    background:gray  }
+
 .background {
     background: url(./images/background-login.jpg)no-repeat center center fixed;
    /* background: url(./images/background2.jpeg)no-repeat center center fixed;*/
@@ -31,13 +25,24 @@
     height: 20%;
     margin-left: 27%;
   }
+ 
+
+
 .imgLogo{
   width: 40%;
 }
+
 .msgError{
   font-size: 24px;
     text-align: center;
     background-color: #ffc107c7;
+}
+#root {
+ /* min-height: calc(100vh - var(--bodyPaddingTop));  */
+ height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: gray;
 }
 
 

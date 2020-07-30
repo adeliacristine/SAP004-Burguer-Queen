@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { firebaseConfig } from '../../plugins/firebaseConfig'
 import "firebase/auth";
-import Input from '../components/input/input';
 import BtnP from '../components/button/button';
-import Label from '../components/label/label';
 import errorCode from './Firabase_error';
-import '../../App.css'
+import '../../App.css';
+import { Form } from 'react-bootstrap';
+import '../components/input/input.css'
+import '../components/label/label.css'
 
 export default (props) => {
   const [email, setEmail] = useState('')
@@ -24,27 +25,35 @@ export default (props) => {
         console.log(response, "Usuário logado")
       })
       .catch((error) => {
-        if (errorCode[error.code]){
-          console.log(errorCode[error.code])
+        if (errorCode[error.code]) {
           setErrorMsg(errorCode[error.code])
         } else {
           (setErrorMsg('Ocorreu um erro. Tente novamente!'))
-        }        
-        
+        }
+
       })
   }
-    return (
-        <>
-          <form>
-              <Label className ='label'>Email</Label>
-              <Input className='input' type="text" value={email} onChange={e => functionSetEmail(e.target.value)} />
-              <Label className ='label'>Senha</Label>
-              <Input className='input' type="password" value={password} onChange={e => setPassword(e.target.value)} />
-              <BtnP className='btnLogCad btn-warning' type="submit" title='Login' onClick={login}>Login</BtnP>
-          </form>
-         <div className='msgError'>
-           <p>{errorMsg}</p>
-           </div>
-        </>
-    )
+  return (
+    <>
+      <Form>
+        <Form.Group >
+          <Form.Label className='label'>Email </Form.Label>
+          <Form.Control className='input' type="text" value={email} onChange={e => functionSetEmail(e.target.value)} />
+
+        </Form.Group>
+
+        <Form.Group >
+          <Form.Label className='label'>Password</Form.Label>
+          <Form.Control className='input' type="password" value={password} onChange={e => setPassword(e.target.value)} />
+        </Form.Group>
+
+        <BtnP variant="warning btnLogCad" type="submit" onClick={login}>
+          Login
+  </BtnP>
+      </Form>
+      <div className='msgError'>
+        <p>{errorMsg}</p>
+      </div>
+    </>
+  )
 }
