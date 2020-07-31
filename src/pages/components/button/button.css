@@ -36,24 +36,30 @@ button:hover {
 }
 
 .btnHeader {
-  color: var(--white);
-  border: 1px solid var(--white);
-  box-sizing: border-box;
-  cursor: pointer;
-  padding: 16px 24px;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 25px;
-  outline: none;
-  border-radius: 5px;
-  text-decoration: none;
-  display: inline-block;
-  transition: opacity .3s;
+	/* color: var(--white); */
+    /* border: -19px solid var(--white); */
+    /* box-sizing: border-box; */
+    /* cursor: pointer; */
+    /* padding: 16px 24px; */
+    /* font-style: normal; */
+    font-weight: bold;
+    /* font-size: 25px; */
+    /* outline: none; */
+    border-radius: 50%;
+    text-decoration: none;
+    display: inline-block;
+    transition: opacity .3s;
 }
+
 .btnHeader:hover,
 .btnHeader:focus {
   opacity: .5;
 }
 .btnFood{
 	margin-right: 20px;
+}
+.btnCount{
+	height: 40px;
+    font-size: 20px;
+    margin: 4px
 }

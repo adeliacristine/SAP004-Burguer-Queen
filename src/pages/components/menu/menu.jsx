@@ -3,8 +3,8 @@ import BtnP from '../button/button'
 import Resumo from '../resumo/resumo'
 import { Card, Accordion } from 'react-bootstrap'
 import './menu.css'
-//import {Link} from 'react-router-dom'
-//import Cardapio from './cardapio'
+//import Counter from './count'
+
 
 
 
@@ -12,14 +12,43 @@ const Menu = (props) => {
  // let [request, setRequest] = useState('')
   let [item, setItem] = useState ('')
   let [ price, setPrice] = useState('')
+  const [count, setCount] = useState(0)
+
+  const increment = () => setCount(count + 1)
+  const decrement = () => setCount(count - 1)
+  const reset = () => setCount(0)
+  let [total, setTotal] = useState(price)
+
+  const somar = ()  => setTotal(total => total + price);
+  /*const somar = useCallback(()  => setTotal(total => total + price),[total]);*/
+ // let [mult, setMult] = useState(total)
+ //setMult(+total)
+// console.log(mult)
+  //const subtrair = useCallback(()  => setTotal(total => total - price),[total]);
+//const counterMult = total * count;
 
 
+
+const handleClick = (e) =>{
+  e.preventDefault()
+  increment();
+  somar();
+ // counterMult();
+}
+
+const handleClickIn =(e) =>{
+  e.preventDefault()
+  decrement();
+ // subtrair();
+}
   const customerRequest =(event)=>{
     event.preventDefault()
+    
     let target = event.target;
      //setRequest(target.textContent)
  setItem(target.firstChild.textContent)
  setPrice(target.children[1].textContent)
+ setTotal(target.children[1].textContent)
    
      //console.log(target.textContent)
      console.log(target.firstChild.textContent)
@@ -42,7 +71,7 @@ const Menu = (props) => {
           </Card.Header>
           
           <Accordion.Collapse className='sectorcard' eventKey="0">
-            <a href='/' className='sectorCardBody' onClick={customerRequest}><p>Café americano</p><p>R$5,00</p>{/*<p className='btn btn-lg btn-warning btnFood'>Adicionar</p>*/}
+            <a href='/' className='sectorCardBody' onClick={customerRequest}><p>Café americano</p><p>5,00</p>{/*<p className='btn btn-lg btn-warning btnFood'>Adicionar</p>*/}
             </a>
           </Accordion.Collapse>
 
@@ -76,7 +105,7 @@ const Menu = (props) => {
       </Accordion.Toggle>
           </Card.Header>
 
-          <Accordion.Collapse className='sectorcard' eventKey="1">
+          <Accordion.Collapse className='sectorCardName' eventKey="1">
             <a href='/' className='sectorCardName'>Hambúgueres
             </a>
           </Accordion.Collapse>
@@ -93,8 +122,8 @@ const Menu = (props) => {
             </a>
           </Accordion.Collapse>
 
-          <Accordion.Collapse eventKey="1">
-            <a href='/' className='sectorCardName'>Acompanhamentos
+          <Accordion.Collapse className='sectorCardName' eventKey="1">
+            <a href='/'className='sectorCardName' >Acompanhamentos
             </a>
           </Accordion.Collapse>
         
@@ -110,7 +139,7 @@ const Menu = (props) => {
             </a>
           </Accordion.Collapse>
 
-          <Accordion.Collapse eventKey="1">
+          <Accordion.Collapse className='sectorCardName' eventKey="1">
             <a href='/' className='sectorCardName'>Bebidas
             </a>
           </Accordion.Collapse>
@@ -151,6 +180,7 @@ const Menu = (props) => {
   <div className='resumo bg-dark'>
   <h2>Item</h2>
   <h2>Valor</h2>
+  <h2>Quantidade</h2>
   </div>
  <div className='resumo'>
    
@@ -170,20 +200,27 @@ const Menu = (props) => {
         )
       })}
     </ul>*/}
-  
-   <BtnP>-1</BtnP><h2>0</h2><BtnP>+1</BtnP>
+
    </div>
 
  <div className='count'>
  <ul>
    <li>
-   <p>{price}</p>
+   <p>R${price}</p>
    </li>
  </ul>
-
- <BtnP>X</BtnP>
  </div>
+ <div className='count'>
 
+<BtnP className='btnCount btn btn-warning' onClick={handleClickIn}>-1</BtnP>
+<p className=''>{count}</p>
+<BtnP className='btnCount btn btn-warning' onClick={handleClick}>+1</BtnP>
+<BtnP className='btnCount btn btn-warning' onClick={reset}>X</BtnP>
+</div>
+ 
+ </div>
+ <div className='count'>
+   <h2>Total</h2><h2 >R${total}</h2>
  </div>
 
   <Resumo />
