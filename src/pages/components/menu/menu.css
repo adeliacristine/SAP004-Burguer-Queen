@@ -6,12 +6,12 @@
 }
 .sectorCardBody{
 	display: flex;
-	justify-content:space-between ;
-	background-color: #8080804d;
+    justify-content: space-between;
+    background-color: #8080804d;
     color: black;
-    font-size: 30px;
-	border-bottom: 2px solid orange;
-	padding: 6px;
+    font-size: 22px;
+    border-bottom: 2px solid orange;
+    padding: 4px;
 }
 
 .sectorCardName{
@@ -20,3 +20,23 @@
 	font-size: 30px;
 	padding:2px;
 }
+ .resumo{
+	 display: flex;
+	 justify-content: space-around;
+	 font-size:30px;
+	 color: black;
+ }
+ .title{
+	text-align: center;
+    background-color: orange;
+ }
+ /*.center{
+	display: flex;
+   
+ }*/
+ .count{
+	 display: flex;
+	 flex-direction: row;
+	 justify-content: space-around;
+	 margin:5px;
+ }

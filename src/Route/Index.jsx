@@ -4,7 +4,6 @@ import Login from '../pages/login/Login';
 import Singup from '../pages/Register/signup'
 import logo from '../../src/images/Logo.png'
 import '../App.css'
-//import Lk from '../components/link/link'
 import '../../src/pages/components/link/link.css';
 
 const Inicial = () => {
