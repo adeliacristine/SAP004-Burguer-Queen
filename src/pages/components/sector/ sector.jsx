@@ -9,24 +9,33 @@ const Sector =()=>{
 const [hall, setHall] = useState('');
 const [kitchen, setKitchen] = useState('');
 
+const teste =()=>{
+	setHall(!hall);
+	setKitchen(kitchen);
+}
+const teste1=()=>{
+	setHall(hall);
+	setKitchen(!kitchen);
+}
+
 	return (
 	<div>
     <div className='bg-dark d-flex  justify-content-around size sector'>
    
 <BtnP type='button' className='btn btn-lg btn-light btnHall' onClick={function handleButton (){
-setHall(!hall) 
+teste()
 }} >Meus pedidos</BtnP>
 <BtnP type='button'className='btn btn-lg btn-light btnHall' onClick={function handleButton (){
-setKitchen(!kitchen)
+teste1()
 }} >Pedidos Enviados</BtnP>
 		</div>
     
-		{ (!kitchen && hall)|| !hall && (
+		{ ! hall && (
 <div >
 <Menu />
 </div>
 			
-		)}{(!hall && kitchen)|| !kitchen &&(
+		)}{ !kitchen &&(
             
     <Pedidos />
 

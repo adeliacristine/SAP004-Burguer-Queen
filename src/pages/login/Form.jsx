@@ -12,6 +12,7 @@ export default (props) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   let [errorMsg, setErrorMsg] = useState('')
+  const [post, setPost] = useState('')
 
   const functionSetEmail = (element) => {
     setEmail(element)
@@ -22,8 +23,18 @@ export default (props) => {
     event.preventDefault()
     firebaseConfig.auth().signInWithEmailAndPassword(email, password)
       .then((response) => {
-        console.log(response, "Usuário logado")
+        if (post === 'hall'){
+          window.location.href = '/hall';
+          console.log('com o hall')
+        }else if(post === 'kitchen'){
+          window.location.href = '/kitchen';
+         console.log('vc se logou na cozinha')
+        } else {
+          console.log('vc se logou sem rota.')
+        }
       })
+       
+      
       .catch((error) => {
         if (errorCode[error.code]) {
           setErrorMsg(errorCode[error.code])
@@ -46,6 +57,15 @@ export default (props) => {
           <Form.Label className='label'>Password</Form.Label>
           <Form.Control className='input' type="password" value={password} onChange={e => setPassword(e.target.value)} />
         </Form.Group>
+
+        <Form.Group >
+    <Form.Label>Selecione um Cargo</Form.Label>
+    <Form.Control as="select" name='office'className='select' value={post} onChange={e => setPost(e.target.value)}>
+    <option className='option'value=''>Cargo</option>
+        <option className='option'value='hall'>Garçom/Garçonete</option>
+        <option className='option' value='kitchen'>Cozinheiro/Auxiliar de Cozinha</option>
+    </Form.Control>
+    </Form.Group>
 
         <BtnP variant="warning btnLogCad" type="submit" onClick={login}>
           Login

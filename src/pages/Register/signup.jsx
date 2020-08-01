@@ -11,6 +11,10 @@ import {Form} from 'react-bootstrap'
 import '../components/input/input.css'
 import '../components/label/label.css'
 import '../components/select/select.css'
+
+
+
+
 export default () => {
 
     const [name, setName] = useState('')
@@ -18,8 +22,10 @@ export default () => {
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
     const [post, setPost] = useState('')
-    let [errorMsg, setErrorMsg] = useState('')
+    let   [errorMsg, setErrorMsg] = useState('')
     const [errorPass, setErrorPass] = useState('')
+
+  
 
     const createLogin = (event) => {
       event.preventDefault()
@@ -36,7 +42,7 @@ export default () => {
                   name,
                   post,
                 })
-            })
+              })
         })
         .catch((error) => {
           if (errorCode[error.code]){
@@ -47,6 +53,7 @@ export default () => {
         })
       }
     }
+
     
     return (
       <div >
@@ -55,6 +62,7 @@ export default () => {
         <Form.Group >
     <Form.Label>Selecione um Cargo</Form.Label>
     <Form.Control as="select" name='office'className='select' value={post} onChange={e => setPost(e.target.value)}>
+    <option className='option'value=''>Cargo</option>
         <option className='option'value='hall'>Garçom/Garçonete</option>
         <option className='option' value='kitchen'>Cozinheiro/Auxiliar de Cozinha</option>
     </Form.Control>
@@ -80,9 +88,11 @@ export default () => {
           <Form.Control className='input' type="password" name="confirm-password" value={confirmPassword} 
             onChange={e => setConfirmPassword(e.target.value)} />
         </Form.Group>
+       
 
-        <BtnP variant="warning btnLogCad" type="submit" onClick={createLogin}>Cadastra
-  </BtnP>
+       <BtnP   variant=" btn-warning btnLogCad" type="submit" onClick={createLogin}>Cadastra
+  </BtnP> 
+ 
       </Form>
       <div className='msgError'>
       <p>{errorPass} {errorMsg}</p>

@@ -1,10 +1,13 @@
 import React from 'react'
-import {Switch, Route ,Link, BrowserRouter} from 'react-router-dom';
+import {Switch, Route , BrowserRouter, Link} from 'react-router-dom';
 import Login from '../pages/login/Login';
 import Singup from '../pages/Register/signup'
 import logo from '../../src/images/Logo.png'
 import '../App.css'
 import '../../src/pages/components/link/link.css';
+import PrivateRoute from './privateRoute'
+import Hall from '../pages/hall/Hall'
+import Kitchen from '../pages/Kitchen'
 
 const Inicial = () => {
   return (
@@ -18,9 +21,9 @@ const Inicial = () => {
       <div className="box-auth" >
       <div className="header-box-auth"> 
             <div>
-            <BrowserRouter> 
-        <Link className='link' to="login" title='Login'>Login</Link>
-        <Link className='link' to="singup" title='Registar'>Registrar</Link>
+           {/* <BrowserRouter> 
+        <Link className='link' to="login" >Login</Link>
+        <Link className='link' to="singup" >Registrar</Link>
     <Switch>
       <Route path='/login'>
       <Login />
@@ -28,9 +31,21 @@ const Inicial = () => {
       <Route path='/singup'>
       <Singup />
         </Route> 
+       
     </Switch>
       </BrowserRouter>
-
+*/}
+<BrowserRouter>
+        <Link className='link' to="/" >Login</Link>
+        <Link className='link' to="singup" >Registrar</Link>
+       
+<Switch>
+  <Route exact path='/'><Login /> </Route>
+{/*<PrivateRoute path='/hall'   > <Hall/> </PrivateRoute>
+  <PrivateRoute path='/kitchen' > <Kitchen /></PrivateRoute>*/}
+  <Route path='/singup' > <Singup /> </Route>
+</Switch>
+</BrowserRouter>
           </div>
           </div>
       </div>
@@ -39,5 +54,5 @@ const Inicial = () => {
   )
 }
 
-
+{/*<PrivateRoute path='/hall' >  component ={() => <Hall />} </PrivateRoute>*/}
 export default Inicial
