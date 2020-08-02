@@ -10,18 +10,17 @@ import '../../App.css'
 
 export default () => {
     const [email, setEmail] = useState('')
-    const [errorMsgForgot, setErrorMsgForgot] = useState('')
-    const [msgForgot, setMsgForgot] = useState('')
+    const [passwordForgot, setPasswordForgot] = useState('')
+    const [passwordForgotError, setPasswordForgotError] = useState('')
 
     const forgotPassword = () => {
       firebaseConfig.auth().useDeviceLanguage();
       firebaseConfig.auth().sendPasswordResetEmail(email)
         .then(() => {
-          setMsgForgot('Email enviado')
+          setPasswordForgot('Email enviado')
       })
       .catch((error)=>{
-          console.log(error)
-          setErrorMsgForgot('Não foi possivel enviar o Email, verifique o Email digitado e tente novamente.')
+        setPasswordForgotError('Não foi possivel enviar o Email, verifique o Email digitado e tente novamente.')
       })
     }
     return (
@@ -33,7 +32,7 @@ export default () => {
               </div>
 
               <div className='msgError'>
-              <p>{errorMsgForgot} {msgForgot}</p>
+              <p>{passwordForgot} {passwordForgotError}</p>
               </div>
 
             </div>

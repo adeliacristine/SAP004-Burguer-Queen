@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Kitchen = (props) => {
-  const [user, setUser] = useState(null)
+  //const [user, setUser] = useState(null)
 
   return (
     <p> Cozinha </p>
