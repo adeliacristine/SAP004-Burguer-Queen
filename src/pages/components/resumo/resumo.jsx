@@ -10,7 +10,7 @@ import './resumo.css'
 const Resumo = props => {
   const [menu, setMenu] = useState('')
   //console.log('pedido enviado')
-  //console.log({menu})
+  console.log(menu)
 
   const RequestMenu = (element) => {
     setMenu(element)

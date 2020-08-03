@@ -8,6 +8,7 @@ import Kitchen from '../src/pages/Kitchen'
 import Hall from './pages/hall/Hall';
 import Login from '../src/pages/login/Login'
 import Singup from '../src/pages/Register/signup'
+import MenuLogCad from '../src/pages/login/menuLogCad'
 
 
 
@@ -48,13 +49,13 @@ userCollection.get().then((staff) => {
         checkPlace(user)
 
       } else {
-        console.log(window.location.pathname)
+        //console.log(window.location.pathname)
         setUserPage(() => <BrowserRouter>
         <Redirect to={window.location.pathname ==='/singup'?'/singup': '/'}/>
           <Switch>
-            <Route path='/' exact={true} component={Login} />
+            <Route path='/' exact={true} component={MenuLogCad} />
             <Route path='/singup' component={Singup}/>
-           {/* <Route path='*' component={Page404} />*/}
+          {/* <Route path='*' component={Page404} />*/}
           </Switch>
         </BrowserRouter>)
       }

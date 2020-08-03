@@ -14,7 +14,7 @@ const singOut=(event)=>{
       .signOut()
       .then(() => {
 		  console.log('deu certo')
-        window.location.href = '/login';
+        window.location.href = '/';
       })
       .catch(() => {
 		  console.log('vc ainda está logado')
