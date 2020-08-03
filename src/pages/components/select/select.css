@@ -1,20 +1,22 @@
-select{
-	border-radius: 15px;
+.select{
+	
 	color: white;
 	background: #ff000000;
-	font-size: larger;
+	/*font-size: larger;*/
 	font-family: Arial, Helvetica, sans-serif;
 	height: 50px;
+	width: 60%;
 	border-bottom-color: orange;
-	border-style: none;
+/*	border-style: none;*/
 	border-bottom-style: solid;
 	border-bottom-width: medium;
 }
 .option{
-	background-color: rgba(255, 166, 0, 0.342);
+	background-color: rgba(255, 166, 0, 0.678);
 	color: white;
-	font-size: 50%;
+	font-size: 15px;
 }
 .option::selection{
-	color:orange;
+	background-color: orangered;
+	color:black;
 }

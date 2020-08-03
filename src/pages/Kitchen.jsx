@@ -1,7 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-export default () => {
-    return(
-        <h1>Oi</h1>
-    )
+const Kitchen = (props) => {
+  //const [user, setUser] = useState(null)
+
+  return (
+    <p> Cozinha </p>
+  )
 }
+
+export default Kitchen

@@ -1,7 +1,7 @@
 .box-auth {
   background-color: #000000c4;
-  color: white;
-  margin-left: 15vw;
+  /*color: white;*/
+  margin:auto;
   opacity: 0.8;
   padding: 35px 0;
   width: 70vw;
@@ -10,10 +10,12 @@
 
 .header-box-auth  {
   color: white;
-  font-size: 35px;
-  margin: 30px 20px;
-  text-decoration: underline;
-  flex-direction: column;
+/*  font-size: 35px;*/
+/*  margin: 30px 20px;*/
+margin-top: 10px;
+ /* text-decoration: underline;*/
+
+/*text-align:center;*/
 }
 
 .form-auth {
