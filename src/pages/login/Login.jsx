@@ -3,8 +3,6 @@ import { firebaseConfig } from '../../plugins/firebaseConfig'
 import "firebase/auth"
 import '../../App.css'
 
-
-
 import './Login.css';
 import Form from './Form';
 
