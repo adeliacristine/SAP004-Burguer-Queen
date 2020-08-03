@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import './Login.css';
-import Form from './Form';
 import { firebaseConfig } from '../../plugins/firebaseConfig'
 import "firebase/auth"
 
+import './Login.css';
+import Form from './Form';
 
 export default () => {
     const [email, setEmail] = useState('')
@@ -19,6 +19,7 @@ export default () => {
         console.log(error)
       })
     }
+
     return (
       <div>
             <div>

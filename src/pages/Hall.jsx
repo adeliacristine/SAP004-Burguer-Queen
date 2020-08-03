@@ -22,11 +22,6 @@ const singOut=(event)=>{
 	   });
   };
 
-
-
-
-
-  
 const Hall = ()=>{
 	return(
 <div className='container-fluid p-0'>

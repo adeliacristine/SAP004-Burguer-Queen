@@ -15,7 +15,7 @@ import Label from '../components/label';
 
 export default () => {
 	const {inputs, handleInputChange, handleSubmit} = useSignUpForm();
- 
+
 	
 	return (
 		<div className='form-columm'>
