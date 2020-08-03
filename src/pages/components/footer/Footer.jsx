@@ -4,7 +4,7 @@ import './footer.css';
 
 function Footer() {
   return (
-  <Card.Footer className='footer'>Desenvolvid por Adélia Cristine e Evelly Thamires</Card.Footer> 
+  <Card.Footer className='footer'>Desenvolvido por Adélia Cristine e Evellyn Thamires</Card.Footer> 
   );
 }
 
