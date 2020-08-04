@@ -24,7 +24,7 @@ userCollection.get().then((staff) => {
   if (staff.data().post === 'kitchen'){
     setUserPage(()=>
       <BrowserRouter>
-        <Redirect to='kitchen '/>
+        <Redirect to='kitchen'/>
           <Switch>
             <Route path='/kitchen' component={Kitchen}/>
           </Switch>
