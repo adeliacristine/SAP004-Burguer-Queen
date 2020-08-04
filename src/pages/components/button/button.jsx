@@ -1,11 +1,12 @@
 import React from 'react'
 import './button.css'
-import {Button } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 
 
 const BtnP = props =>{
 	return(
-<Button {...props}/>
+		<Button {...props}/>
 	)
 }
+
 export default BtnP

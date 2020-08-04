@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { firebaseConfig } from '../../plugins/firebaseConfig'
+import { firebaseConfig } from '../../plugins/firebaseConfig';
 import "firebase/auth";
 import BtnP from '../components/button/button';
 import errorCode from './Firabase_error';
@@ -33,7 +33,6 @@ export default (props) => {
         } else {
           (setErrorMsg('Ocorreu um erro. Tente novamente!'))
         }
-
       })
   }
   return (

@@ -23,21 +23,20 @@ userCollection.get().then((staff) => {
   console.log(user.uid)
   if (staff.data().post === 'kitchen'){
     setUserPage(()=>
-     <BrowserRouter>
-    <Redirect to='/kitchen '/>
-    <Switch>
-    <Route path='/kitchen' component={Kitchen}/>
-    
-    </Switch>
-    </BrowserRouter>)
+      <BrowserRouter>
+        <Redirect to='kitchen '/>
+          <Switch>
+            <Route path='/kitchen' component={Kitchen}/>
+          </Switch>
+      </BrowserRouter>)
   }else if (staff.data().post ==='hall'){
-    setUserPage(()=><BrowserRouter>
-    <Redirect to='/hall'/>
-    <Switch>
-    <Route path='/hall' component={Hall}/>
-    
-    </Switch>
-    </BrowserRouter>)
+    setUserPage(()=>
+      <BrowserRouter>
+        <Redirect to='/hall'/>
+          <Switch>
+            <Route path='/hall' component={Hall}/>
+          </Switch>
+      </BrowserRouter>)
   }else {
     console.log('deu ruim')
     setUserPage(()=><Route path='/error' component={NotFound}/>)
@@ -48,7 +47,6 @@ userCollection.get().then((staff) => {
     firebaseConfig.auth().onAuthStateChanged((user) => {
       if (user) {
         checkPlace(user)
-
       } else {
         //console.log(window.location.pathname)
         setUserPage(() => <BrowserRouter>
@@ -64,16 +62,11 @@ userCollection.get().then((staff) => {
 
   }, [])
 
-
- 
   return (
-   
-<div className='container-fluid p-0' >
-
-{userPage}
-  
-
-</div>
+    <div className='container-fluid p-0' >
+      {userPage}
+    </div>
   );
   }
-export default App;
+
+  export default App;

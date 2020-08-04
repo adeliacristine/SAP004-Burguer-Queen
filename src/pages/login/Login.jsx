@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import './Login.css';
-import Form from './Form';
 import { firebaseConfig } from '../../plugins/firebaseConfig'
 import "firebase/auth"
 import '../../App.css'
 
-
-
+import './Login.css';
+import Form from './Form';
 
 export default () => {
     const [email, setEmail] = useState('')
@@ -23,6 +21,7 @@ export default () => {
         setPasswordForgotError('Não foi possivel enviar o Email, verifique o Email digitado e tente novamente.')
       })
     }
+
     return (
       <div>
             <div>
