@@ -4,9 +4,10 @@ import "firebase/firestore";
 import 'firebase/auth'
 import {firebaseConfig} from './plugins/firebaseConfig'
 import { BrowserRouter, Route, Redirect ,Switch} from 'react-router-dom';
-import Kitchen from '../src/pages/Kitchen'
+
+import Kitchen from './pages/kitchen/Kitchen'
 import Hall from './pages/hall/Hall';
-import Login from '../src/pages/login/Login'
+import NotFound from '../src/404/404'
 import Singup from '../src/pages/Register/signup'
 import MenuLogCad from '../src/pages/login/menuLogCad'
 
@@ -23,7 +24,7 @@ userCollection.get().then((staff) => {
   if (staff.data().post === 'kitchen'){
     setUserPage(()=>
      <BrowserRouter>
-    <Redirect to='kitchen '/>
+    <Redirect to='/kitchen '/>
     <Switch>
     <Route path='/kitchen' component={Kitchen}/>
     
@@ -39,7 +40,7 @@ userCollection.get().then((staff) => {
     </BrowserRouter>)
   }else {
     console.log('deu ruim')
-   /* setUserPage(()=><Route path='/error' component={404}/>)*/
+    setUserPage(()=><Route path='/error' component={NotFound}/>)
   }
 });
 }
@@ -55,7 +56,7 @@ userCollection.get().then((staff) => {
           <Switch>
             <Route path='/' exact={true} component={MenuLogCad} />
             <Route path='/singup' component={Singup}/>
-          {/* <Route path='*' component={Page404} />*/}
+           <Route path='*' component={NotFound} />
           </Switch>
         </BrowserRouter>)
       }
