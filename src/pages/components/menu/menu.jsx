@@ -12,20 +12,12 @@ import '../button/button.css'
 const Menu = (props) => {
 
   const [itens, setNameItens] = useState([])
-  // let [request, setRequest] = useState('')
- // let [item, setItem] = useState('')
- // let [price, setPrice] = useState('')
-  //const [count, setCount] = useState(1)
- const [quantity, setQuantity]= useState(1)
-  //const [prices, setPrices] = useState([])
- // const [active, setActive] = useState(true);
-  //const [active2, setActive2] = useState(true)
-  const increment = () => setQuantity(quantity + 1)
-  const equal = () => setQuantity(quantity)
-  const decrement = () => setQuantity(quantity - 1)
- //const reset = () => setQuantity(0)
- const [order, setOrder] = useState([])
- // let [total, setTotal] = useState(price)
+  const [count, setCount] = useState(1)
+ const increment = () => setCount(count + 1)
+ const decrement = () => setCount(count - 1)
+ const reset = () => setCount(0)
+ //let [total, setTotal] = useState(price)
+// const somar = ()  => setTotal(total => total + price);
 
   //const somar = () => setTotal(total => total + price);
   /*const somar = useCallback(()  => setTotal(total => total + price),[total]);*/
@@ -35,81 +27,27 @@ const Menu = (props) => {
   //const subtrair = useCallback(()  => setTotal(total => total - price),[total]);
   //const counterMult = total * count;
 
-  /*const handleClick = (e) => {
-    e.preventDefault()
-    increment();*/
-    
-    // counterMult();
-  
-
- /* const handleClickIn = (e) => {
-    e.preventDefault()
-    decrement();*/
-    // subtrair();
   
   const customerRequest = (event, name, price) => {
     event.preventDefault()
-  
-    setNameItens([...itens, {
-      name,
-      price,
-      quantity
-     
-  }])
- /* if (name === 'Café americano'){
-    equal()
-  }else{
-    increment(*/
-    } 
-
- /*const index = itens.map(item =>item.name === name )
- if (setNameItens === name){
-  increment()
-}else{
- equal()
-}
-console.log(equal)*/
-
-
-/*
-  const itemIndex = itens.findIndex(item => item === name)
-  console.log(itens.find)
-    console.log(name)
-console.log(itemIndex===-1)
-console.log(itemIndex)
-    console.log(quantity)
-    if (itemIndex === '-1'){
-      equal()
-  } else { 
-    
-    increment()
-      
-  }*/
- // const addOrder = (selectedItem) => {
-    //const findItem = order.find(item => item.name === name)
-    //console.log(selectedItem)
-   // console.log(findItem)
-//if(findItem ){
-       /* increment()
-        setOrder([...order]);
+    let result = itens.findIndex(item => item.name === name)
+    console.log(result)
+    if (result >= 0) {
+      let list = itens
+      list[result].count ++
+      setNameItens([...list])
     } else {
-        //selectedItem.quantity = 1;
-        equal()
-        setOrder([...order, name]);
-    }*/
+      setNameItens([...itens, {
+        name,
+        price, 
+        count
+      }])
+    }
 
-  
-  console.log(order)
-      console.log(quantity)
+    console.log(itens)
 
- 
-
-  /*  let activeFilter = event.target;
-    activeFilter.classList.add('btnFood');
-    setActive(false)
-    setActive2(false);*/
-  
-
+    
+  } 
   return (
     <>
       <div className='center'>
@@ -120,22 +58,20 @@ console.log(itemIndex)
                 <Accordion.Toggle as={BtnP} variant="secondary" size="lg" eventKey="0">
                   Café da Manhã
               </Accordion.Toggle>
-              </Card.Header>
+            </Card.Header>
+          <Accordion.Collapse className='sectorcard' eventKey="0">
+            <Card.Body className='sectorCardBody'>Café americano R$5,00
+            <BtnP type='button' className= 'btn btn-lg btn-warning btnFood'
+              onClick={ (e) => customerRequest(e, 'Café americano', 5)}>Adicionar</BtnP>
+            </Card.Body>
+          </Accordion.Collapse>
 
-              <Accordion.Collapse className='sectorcard' eventKey="0">
-
-                <Card.Body href='/' className='sectorCardBody'>Café americano R$5,00
-                  <BtnP type='button' className='btn btn-lg btn-warning btnFood'
-                     onClick={(e) => customerRequest(e, 'Café americano', 5)}>Adicionar</BtnP>
-                </Card.Body>
-              </Accordion.Collapse>
-
-              <Accordion.Collapse eventKey="0">
-                <Card.Body className='sectorCardBody'>Café com leite R$7,00
-                  <BtnP type='button' className='btn btn-lg btn-warning btnFood'
-                     onClick={(e) => customerRequest(e, 'Café com leite', 7)}>Adicionar</BtnP>
-                </Card.Body>
-              </Accordion.Collapse>
+          <Accordion.Collapse eventKey="0">
+            <Card.Body className='sectorCardBody'>Café com leite R$7,00       
+            <BtnP type='button' className='btn btn-lg btn-warning btnFood'
+              onClick={ (e) => customerRequest(e, 'Café com leite', 7)}>Adicionar</BtnP>
+            </Card.Body>
+          </Accordion.Collapse>
 
           <Accordion.Collapse eventKey="0">
                 <Card.Body className='sectorCardBody'>Misto Quente R$10,00
@@ -249,16 +185,10 @@ console.log(itemIndex)
         </div>
       <div className='resumo'>
       <div className='count'>
-        <ul>
-          <li>
-          {/*  <p>{item}</p>*/}
-          </li>
-        </ul>
       <ul>
-        {itens.map((item)=>{
-          
+        {itens.map((item, index)=>{
           return(
-            <li kay ={item.name}>
+            <li key = {index}>
               {item.name}
             </li>
           )
@@ -267,9 +197,9 @@ console.log(itemIndex)
     </div>
     <div className='count'>
       <ul>
-        {itens.map((item)=>{
+        {itens.map((item, index)=>{
           return(
-            <li kay ={item.price}>
+            <li key = {index}>
               {item.price}
             </li>
           )
@@ -278,12 +208,11 @@ console.log(itemIndex)
   </div>
 <div className='count'>
 <ul>
-        {itens.map((item)=>{
-         
-         
+        {itens.map((item)=>{         
           return(
-            <li kay ={item.quantity}>
-              {item.quantity}<BtnP className='btn btn-lg btn-warning btnFood' onClick={decrement}>X</BtnP>
+            <li kay ={item.count}>
+              {item.count}
+              <BtnP className='btn btn-lg btn-warning btnFood' onClick={decrement}>X</BtnP>
             </li>
           )
         })}
