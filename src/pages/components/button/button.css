@@ -75,3 +75,6 @@ button:hover {
     background-color: transparent;
     color: orange;
 }
+.remove {
+	color: gray;
+}
