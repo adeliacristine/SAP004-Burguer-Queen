@@ -48,3 +48,10 @@
 	 justify-content: space-around;
 	 margin:5px;
  }
+ .modal{
+	text-align: center;
+    font-size: 30px;
+ }
+ .sizeModal{
+	 font-size:30px;
+ }
