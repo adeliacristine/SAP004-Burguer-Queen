@@ -34,7 +34,7 @@ const Resumo = props => {
 
       <Form.Group >
         <Form.Label className='label'>Mesa</Form.Label>
-        <Form.Control className='input' type="text"  onChange={e => RequestMenu(e.target.value)} />
+        <Form.Control className='input' type="number"  onChange={e => RequestMenu(e.target.value)} />
       </Form.Group>
 
       <BtnP variant="warning btnLogCad" type="submit" onClick={Resumo}>
