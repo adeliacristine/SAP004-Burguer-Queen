@@ -13,19 +13,7 @@ const Menu = (props) => {
 
   const [itens, setNameItens] = useState([])
   const [count, setCount] = useState(1)
- const increment = () => setCount(count + 1)
- const decrement = () => setCount(count - 1)
- const reset = () => setCount(0)
- //let [total, setTotal] = useState(price)
-// const somar = ()  => setTotal(total => total + price);
 
-  //const somar = () => setTotal(total => total + price);
-  /*const somar = useCallback(()  => setTotal(total => total + price),[total]);*/
-  // let [mult, setMult] = useState(total)
-  //setMult(+total)
-  // console.log(mult)
-  //const subtrair = useCallback(()  => setTotal(total => total - price),[total]);
-  //const counterMult = total * count;
 
   
   const customerRequest = (event, name, price) => {
@@ -36,18 +24,34 @@ const Menu = (props) => {
       let list = itens
       list[result].count ++
       setNameItens([...list])
+      console.log([...list])
     } else {
       setNameItens([...itens, {
         name,
         price, 
         count
       }])
+
+      console.log(totalPrice)
+    }
+    }
+   
+
+    const deleteItem = (event, name) => {
+      event.preventDefault()
+      let result = itens.findIndex(item => item.name === name)
+      console.log(result)
+      if (itens[result].count > 1) {
+        itens[result].count --
+        setNameItens([...itens])
+        console.log([...itens])
+      } else {
+        const newItens = itens.filter((item,index)=>index!= result)
+        setNameItens(newItens)          
+      }
     }
 
-    console.log(itens)
-
-    
-  } 
+let totalPrice = itens.reduce((total, item)=> (total + item.price * item.count) , 0 )
   return (
     <>
       <div className='center'>
@@ -62,7 +66,7 @@ const Menu = (props) => {
           <Accordion.Collapse className='sectorcard' eventKey="0">
             <Card.Body className='sectorCardBody'>Café americano R$5,00
             <BtnP type='button' className= 'btn btn-lg btn-warning btnFood'
-              onClick={ (e) => customerRequest(e, 'Café americano', 5)}>Adicionar</BtnP>
+              onClick={ (e) => customerRequest(e, 'Café americano',5 )}>Adicionar</BtnP>
             </Card.Body>
           </Accordion.Collapse>
 
@@ -178,12 +182,16 @@ const Menu = (props) => {
     </div>
       <div>
         <h2 className='title'>Resumo</h2>
+        </div>
+
         <div className='resumo bg-dark'>
           <h2>Item</h2>
           <h2>Valor</h2>
           <h2>Quantidade</h2>
         </div>
-      <div className='resumo'>
+
+      <div >
+        <div className='resumo'>
       <div className='count'>
       <ul>
         {itens.map((item, index)=>{
@@ -200,7 +208,7 @@ const Menu = (props) => {
         {itens.map((item, index)=>{
           return(
             <li key = {index}>
-              {item.price}
+              R${item.price},00
             </li>
           )
         })}
@@ -212,7 +220,7 @@ const Menu = (props) => {
           return(
             <li kay ={item.count}>
               {item.count}
-              <BtnP className='btn btn-lg btn-warning btnFood' onClick={decrement}>X</BtnP>
+              <BtnP className='btn btn-lg btn-warning btnFood'  onClick={ (e) => deleteItem(e, item.name )}>X</BtnP>
             </li>
           )
         })}
@@ -220,12 +228,20 @@ const Menu = (props) => {
  
 </div>
 </div>
-  <div className='count'>
+<div>
+<div className='count'>
     <h2>Total</h2>
-    <h2>valor</h2>
+    <h2>R${totalPrice},00</h2>
 </div>
-  <Resumo />
+<div>
+<Resumo />
 </div>
+</div>
+ 
+
+
+</div>
+
     </>
   )
 }
