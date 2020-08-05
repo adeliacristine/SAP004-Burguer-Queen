@@ -12,7 +12,6 @@ const Counter = () => {
 
   return (
     <div className=''>
-     
       <div className='count'>
 
         <BtnP className='btnCount btn btn-warning' onClick={decrement}>-1</BtnP>

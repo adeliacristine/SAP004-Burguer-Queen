@@ -20,7 +20,6 @@ const App =()=> {
   const checkPlace = (user) =>{
 const userCollection =firebaseConfig.firestore().collection('users').doc(user.uid);
 userCollection.get().then((staff) => {
-  console.log(user.uid)
   if (staff.data().post === 'kitchen'){
     setUserPage(()=>
       <BrowserRouter>
