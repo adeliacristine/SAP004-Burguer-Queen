@@ -47,11 +47,26 @@ const handleClickIn =(e) =>{
 }
   const customerRequest = (event, name, price) => {
     event.preventDefault()
-    setNameItens([...itens, {
-      name,
-      price, 
-      count
-    }])
+    event.stopPropagation()
+    console.log(name, price)
+
+    let result = itens.findIndex(item => item.name === name)
+    console.log(result)
+    if (result >= 0) {
+      let list = itens
+      list[result].count ++
+      setNameItens([...list])
+    } else {
+      setNameItens([...itens, {
+        name,
+        price, 
+        count
+      }])
+    }
+
+    console.log(itens)
+
+    
     
     let activeFilter = event.target;
     activeFilter.classList.add('btnFood');
@@ -76,7 +91,7 @@ const handleClickIn =(e) =>{
               <p>Café americano</p>
               <p>R$5,00</p>
             <BtnP type='button' className= {active ? `btn btn-lg btn-warning btnFood` : `btn btn-lg btn-warning remove`}
-              disabled={!active} onClick={ (e) => customerRequest(e, 'Café americano', 5)}>Adicionar</BtnP>
+              onClick={ (e) => customerRequest(e, 'Café americano', 5)}>Adicionar</BtnP>
             </a>
           </Accordion.Collapse>
 
@@ -85,7 +100,7 @@ const handleClickIn =(e) =>{
               <p>Café com leite</p>
               <p>R$7,00</p>          
             <BtnP type='button' className={active2 ? `btn btn-lg btn-warning btnFood` : `btn btn-lg btn-warning remove`}
-              disabled={!active2} onClick={ (e) => customerRequest(e, 'Café com leite', 7)}>Adicionar</BtnP>
+              onClick={ (e) => customerRequest(e, 'Café com leite', 7)}>Adicionar</BtnP>
             </a>
           </Accordion.Collapse>
 
@@ -222,9 +237,9 @@ const handleClickIn =(e) =>{
           </li>
         </ul>
       <ul>
-        {itens.map((item)=>{
+        {itens.map((item, index)=>{
           return(
-            <li kay ={item.name}>
+            <li key = {index}>
               {item.name}
             </li>
           )
@@ -233,9 +248,9 @@ const handleClickIn =(e) =>{
     </div>
     <div className='count'>
       <ul>
-        {itens.map((item)=>{
+        {itens.map((item, index)=>{
           return(
-            <li kay ={item.price}>
+            <li key = {index}>
               {item.price}
             </li>
           )
