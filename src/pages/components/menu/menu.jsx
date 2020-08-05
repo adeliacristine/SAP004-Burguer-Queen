@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import BtnP from '../button/button'
 import Resumo from '../resumo/resumo'
-import { Card, Accordion } from 'react-bootstrap'
+import { Card, Accordion, Modal , ToggleButton, ToggleButtonGroup} from 'react-bootstrap'
 import './menu.css'
 import '../button/button.css'
 //import Counter from './count'
@@ -9,13 +9,17 @@ import '../button/button.css'
 
 
 
-const Menu = (props) => {
+const Menu = () => {
 
   const [itens, setNameItens] = useState([])
   const [count, setCount] = useState(1)
+  const [show, setShow] = useState(false);
 
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const [value, setValue] = useState([1, 3]);
+  const handleChange = (val) => setValue(val);
 
-  
   const customerRequest = (event, name, price) => {
     event.preventDefault()
     let result = itens.findIndex(item => item.name === name)
@@ -46,12 +50,17 @@ const Menu = (props) => {
         setNameItens([...itens])
         console.log([...itens])
       } else {
-        const newItens = itens.filter((item,index)=>index!= result)
+        const newItens = itens.filter((item,index)=>index!== result)
         setNameItens(newItens)          
       }
     }
 
 let totalPrice = itens.reduce((total, item)=> (total + item.price * item.count) , 0 )
+
+/*const carnes = ()=>{
+ setOption('frango');
+ 
+}*/
   return (
     <>
       <div className='center'>
@@ -95,6 +104,7 @@ let totalPrice = itens.reduce((total, item)=> (total + item.price * item.count) 
 
         </div>
         <div>
+          
         <Accordion>
         <Card>
           <Card.Header>
@@ -109,15 +119,17 @@ let totalPrice = itens.reduce((total, item)=> (total + item.price * item.count) 
 
           <Accordion.Collapse eventKey="1">
             <Card.Body className='sectorCardBody'>Hamburguer simples R$10,00
-            <BtnP type='button' className='btn btn-lg btn-warning btnFood'
-              onClick={ (e) => customerRequest(e, 'Hamburguer simples', 10) }>Adicionar</BtnP>
+          <BtnP type='button' className='btn btn-lg btn-warning btnFood' onClick={handleShow}>
+        Adicionar
+      </BtnP>
             </Card.Body>
           </Accordion.Collapse>
 
           <Accordion.Collapse eventKey="1">
             <Card.Body className='sectorCardBody'>Hamburguer duplo R$15,00
-            <BtnP type='button' className='btn btn-lg btn-warning btnFood'
-              onClick={ (e) => customerRequest(e, 'Hamburguer duplo', 15) }>Adicionar</BtnP>
+            <BtnP type='button' className='btn btn-lg btn-warning btnFood' onClick={handleShow}>
+        Adicionar
+      </BtnP>
             </Card.Body>
           </Accordion.Collapse>
 
@@ -237,10 +249,40 @@ let totalPrice = itens.reduce((total, item)=> (total + item.price * item.count) 
 <Resumo />
 </div>
 </div>
- 
+
 
 
 </div>
+
+<Modal clasName='modal'show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Adicionais</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Escolha seu sabor.</Modal.Body>
+        <Modal.Body>
+        <ToggleButtonGroup type="checkbox" value={value} onChange={handleChange}>
+      <ToggleButton variant='warning sizeModal' size='lg' value='frango'>Frango</ToggleButton>
+      <ToggleButton variant="dark sizeModal" value='bovina'>Bovina</ToggleButton>
+      <ToggleButton variant='warning sizeModal'value='vegetariano'>Vegetariano</ToggleButton>
+    </ToggleButtonGroup>
+        </Modal.Body>
+        <Modal.Body>Quer adicionar por mais R$1,00?</Modal.Body>
+        <Modal.Body>
+        <ToggleButtonGroup type="checkbox" value={value} onChange={handleChange}>
+      <ToggleButton variant='warning sizeModal'value='ovo'>Ovo</ToggleButton>
+      <ToggleButton variant="dark sizeModal"value='queijo'>Queijo</ToggleButton>
+      
+    </ToggleButtonGroup>
+        </Modal.Body>
+        <Modal.Footer>
+          <BtnP variant="secondary sizeModal" onClick={handleClose}>
+            Cancelar
+          </BtnP>
+          <BtnP variant="warning sizeModal" onClick={handleClose}>
+            Adicionar
+          </BtnP>
+        </Modal.Footer>
+      </Modal>
 
     </>
   )
