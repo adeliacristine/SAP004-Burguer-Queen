@@ -70,22 +70,22 @@ export default () => {
       
         <Form.Group >
           <Form.Label className='label'>Nome </Form.Label>
-          <Form.Control className='input' type="text" name="name" value={name} onChange={e => setName(e.target.value)} required />
+          <Form.Control className='inputLogCad' type="text" name="name" value={name} onChange={e => setName(e.target.value)} required />
         </Form.Group>
 
         <Form.Group >
           <Form.Label className='label'>Email </Form.Label>
-          <Form.Control className='input' type="email" name="email" value={email} onChange={e => setEmail(e.target.value)} required />
+          <Form.Control className='inputLogCad' type="email" name="email" value={email} onChange={e => setEmail(e.target.value)} required />
         </Form.Group>
 
         <Form.Group >
           <Form.Label className='label'>Senha</Form.Label>
-          <Form.Control className='input' type="password" name="password" value={password} onChange={e => setPassword(e.target.value)}  />
+          <Form.Control className='inputLogCad' type="password" name="password" value={password} onChange={e => setPassword(e.target.value)}  />
         </Form.Group>
 
         <Form.Group >
           <Form.Label className='label'>Confirme sua senha</Form.Label>
-          <Form.Control className='input' type="password" name="confirm-password" value={confirmPassword} 
+          <Form.Control className='inputLogCad' type="password" name="confirm-password" value={confirmPassword} 
             onChange={e => setConfirmPassword(e.target.value)} />
         </Form.Group>
        
