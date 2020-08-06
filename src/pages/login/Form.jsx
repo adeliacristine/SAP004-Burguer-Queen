@@ -41,13 +41,13 @@ export default (props) => {
       <Form>
         <Form.Group >
           <Form.Label className='label'>Email </Form.Label>
-          <Form.Control className='input' type="text" value={email} onChange={e => functionSetEmail(e.target.value)} />
+          <Form.Control className='inputLogCad' type="text" value={email} onChange={e => functionSetEmail(e.target.value)} />
 
         </Form.Group>
 
         <Form.Group >
           <Form.Label className='label'>Password</Form.Label>
-          <Form.Control className='input' type="password" value={password} onChange={e => setPassword(e.target.value)} />
+          <Form.Control className='inputLogCad' type="password" value={password} onChange={e => setPassword(e.target.value)} />
         </Form.Group>
 
         
