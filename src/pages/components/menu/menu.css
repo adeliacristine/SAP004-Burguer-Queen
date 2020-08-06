@@ -26,6 +26,14 @@
 	 font-size:30px;
 	 color: black;
  }
+ .resumoItens{
+	display: flex;
+	justify-content: space-around;
+	font-size:30px;
+	color: black;
+	flex-direction: column;
+	
+}
  .title{
 	text-align: center;
     background-color: orange;
@@ -39,4 +47,11 @@
 	 flex-direction: row;
 	 justify-content: space-around;
 	 margin:5px;
+ }
+ .modal{
+	text-align: center;
+    font-size: 30px;
+ }
+ .sizeModal{
+	 font-size:30px;
  }

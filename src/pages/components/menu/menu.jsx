@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import BtnP from '../button/button'
 import Resumo from '../resumo/resumo'
-import { Card, Accordion } from 'react-bootstrap'
+import { Card, Accordion, Modal , Form} from 'react-bootstrap'
 import './menu.css'
 import '../button/button.css'
 //import Counter from './count'
@@ -9,25 +9,52 @@ import '../button/button.css'
 
 
 
-const Menu = (props) => {
+const Menu = () => {
 
   const [itens, setNameItens] = useState([])
   const [count, setCount] = useState(1)
- const increment = () => setCount(count + 1)
- const decrement = () => setCount(count - 1)
- const reset = () => setCount(0)
- //let [total, setTotal] = useState(price)
-// const somar = ()  => setTotal(total => total + price);
+  const [show, setShow] = useState(false);
+ // const [carne, setCarne]=useState('')
+  const [ checked,setChecked]= useState('')
+  const [ check,setCheck]= useState('')
+  const [ teste,setTeste]= useState([])
+ // setCarne()
+  console.log(checked)
+  console.log(check)
+  console.log(teste)
 
-  //const somar = () => setTotal(total => total + price);
-  /*const somar = useCallback(()  => setTotal(total => total + price),[total]);*/
-  // let [mult, setMult] = useState(total)
-  //setMult(+total)
-  // console.log(mult)
-  //const subtrair = useCallback(()  => setTotal(total => total - price),[total]);
-  //const counterMult = total * count;
+  const handleClose = () => setShow(false);
 
-  
+  const handleAdd = (event,teste,checked) => {
+    event.preventDefault()
+    let result = itens.findIndex(item => item.name === teste)
+    console.log(result)
+    if (result >= 0) {
+      let list = itens
+      list[result].count ++
+      setNameItens([...list])
+      console.log([...list])
+    } else {
+      setNameItens([...itens, {
+        teste,
+        checked,
+        count
+      }])
+
+      console.log(totalPrice)
+    }
+   
+    setShow(false);
+  }
+  const handleShow = (event, name, price) => {
+    event.preventDefault()
+    setTeste(
+      name,
+      price
+    )
+    setShow(true);
+    }
+
   const customerRequest = (event, name, price) => {
     event.preventDefault()
     let result = itens.findIndex(item => item.name === name)
@@ -36,18 +63,35 @@ const Menu = (props) => {
       let list = itens
       list[result].count ++
       setNameItens([...list])
+      console.log([...list])
     } else {
       setNameItens([...itens, {
         name,
         price, 
         count
       }])
+
+      console.log(totalPrice)
+    }
     }
 
-    console.log(itens)
+    const deleteItem = (event, name) => {
+      event.preventDefault()
+      let result = itens.findIndex(item => item.name === name)
+      console.log(result)
+      if (itens[result].count > 1) {
+        itens[result].count --
+        setNameItens([...itens])
+        console.log([...itens])
+      } else {
+        const newItens = itens.filter((item,index)=>index!== result)
+        setNameItens(newItens)          
+      }
+    }
 
-    
-  } 
+let totalPrice = itens.reduce((total, item)=> (total + item.price * item.count) , 0 )
+
+
   return (
     <>
       <div className='center'>
@@ -62,7 +106,7 @@ const Menu = (props) => {
           <Accordion.Collapse className='sectorcard' eventKey="0">
             <Card.Body className='sectorCardBody'>Café americano R$5,00
             <BtnP type='button' className= 'btn btn-lg btn-warning btnFood'
-              onClick={ (e) => customerRequest(e, 'Café americano', 5)}>Adicionar</BtnP>
+              onClick={ (e) => customerRequest(e, 'Café americano',5 )}>Adicionar</BtnP>
             </Card.Body>
           </Accordion.Collapse>
 
@@ -91,6 +135,7 @@ const Menu = (props) => {
 
         </div>
         <div>
+          
         <Accordion>
         <Card>
           <Card.Header>
@@ -105,15 +150,17 @@ const Menu = (props) => {
 
           <Accordion.Collapse eventKey="1">
             <Card.Body className='sectorCardBody'>Hamburguer simples R$10,00
-            <BtnP type='button' className='btn btn-lg btn-warning btnFood'
-              onClick={ (e) => customerRequest(e, 'Hamburguer simples', 10) }>Adicionar</BtnP>
+          <BtnP type='button' className='btn btn-lg btn-warning btnFood' onClick={ (e) => handleShow(e, 'Hamburguer simples', 10)} >
+        Adicionar
+      </BtnP>
             </Card.Body>
           </Accordion.Collapse>
 
           <Accordion.Collapse eventKey="1">
             <Card.Body className='sectorCardBody'>Hamburguer duplo R$15,00
-            <BtnP type='button' className='btn btn-lg btn-warning btnFood'
-              onClick={ (e) => customerRequest(e, 'Hamburguer duplo', 15) }>Adicionar</BtnP>
+            <BtnP type='button' className='btn btn-lg btn-warning btnFood' onClick={handleShow}>
+        Adicionar
+      </BtnP>
             </Card.Body>
           </Accordion.Collapse>
 
@@ -178,12 +225,16 @@ const Menu = (props) => {
     </div>
       <div>
         <h2 className='title'>Resumo</h2>
+        </div>
+
         <div className='resumo bg-dark'>
           <h2>Item</h2>
           <h2>Valor</h2>
           <h2>Quantidade</h2>
         </div>
-      <div className='resumo'>
+
+      <div >
+        <div className='resumo'>
       <div className='count'>
       <ul>
         {itens.map((item, index)=>{
@@ -200,7 +251,7 @@ const Menu = (props) => {
         {itens.map((item, index)=>{
           return(
             <li key = {index}>
-              {item.price}
+              R${item.price},00
             </li>
           )
         })}
@@ -212,7 +263,7 @@ const Menu = (props) => {
           return(
             <li key ={index}>
               {item.count}
-              <BtnP className='btn btn-lg btn-warning btnFood' onClick={decrement}>X</BtnP>
+              <BtnP className='btn btn-lg btn-warning btnFood'  onClick={ (e) => deleteItem(e, item.name )}>X</BtnP>
             </li>
           )
         })}
@@ -220,12 +271,82 @@ const Menu = (props) => {
  
 </div>
 </div>
-  <div className='count'>
+<div>
+<div className='count'>
     <h2>Total</h2>
-    <h2>valor</h2>
+    <h2>R${totalPrice},00</h2>
 </div>
-  <Resumo />
+<div>
+<Resumo />
 </div>
+</div>
+
+
+
+</div>
+
+<Modal clasName='modal'show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Adicionais</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Escolha seu sabor.</Modal.Body>
+        <Modal.Body>
+
+        <Form>
+  <Form.Check 
+    type="switch"
+    id="frango"
+    label="Frango"
+    onClick={() => setChecked('frango')}
+  />
+   <Form.Check 
+    type="switch"
+    id="carne "
+    label="Carne bovina"
+    
+    onChange={() => setChecked('carne')}
+  />
+  <Form.Check 
+    type="switch"
+    id="Vegetariano"
+    label="Vegetariano"
+  
+    onClick={() => setChecked('veg')}
+    //onClick={ (e) => customerRequest(e, 'Batata frita', 5)
+  />
+</Form>
+        </Modal.Body>
+        <Modal.Body>Quer adicionar por mais R$1,00?</Modal.Body>
+        <Modal.Body>
+        <Form>
+  <Form.Check 
+    type="switch"
+    id="ovo"
+    label="Ovo"
+    
+ 
+    onClick={() => setCheck('ovo')}
+  />
+   <Form.Check 
+    type="switch"
+    id="queijo"
+    label="Queijo"
+   
+
+    onClick={() => setCheck('queijo')}
+  />
+</Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <BtnP variant="secondary sizeModal" onClick={handleClose}>
+            Cancelar
+          </BtnP>
+          <BtnP variant="warning sizeModal" onClick={handleAdd }>
+            Adicionar
+          </BtnP>
+        </Modal.Footer>
+      </Modal>
+
     </>
   )
 }
