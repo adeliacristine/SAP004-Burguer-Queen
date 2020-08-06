@@ -7,7 +7,9 @@ import './resumo.css'
 
 
 
-const Resumo = props => {
+const Resumo = ({order}) => {
+  console.log(order);
+
   const [menu, setMenu] = useState('')
   //console.log('pedido enviado')
   console.log(menu)
