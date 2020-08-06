@@ -62,7 +62,7 @@ export default () => {
         <Form.Group >
     <Form.Label>Selecione um Cargo</Form.Label>
     <Form.Control as="select" name='office'className='select' value={post} onChange={e => setPost(e.target.value)}>
-    <option className='option'value=''>Cargo</option>
+        <option className='option'value=''>Cargo</option>
         <option className='option'value='hall'>Garçom/Garçonete</option>
         <option className='option' value='kitchen'>Cozinheiro/Auxiliar de Cozinha</option>
     </Form.Control>
