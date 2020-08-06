@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import BtnP from '../button/button'
 import Resumo from '../resumo/resumo'
-import { Card, Accordion, Modal , ToggleButton, ToggleButtonGroup} from 'react-bootstrap'
+import { Card, Accordion, Modal , Form} from 'react-bootstrap'
 import './menu.css'
 import '../button/button.css'
 //import Counter from './count'
@@ -14,11 +14,46 @@ const Menu = () => {
   const [itens, setNameItens] = useState([])
   const [count, setCount] = useState(1)
   const [show, setShow] = useState(false);
+ // const [carne, setCarne]=useState('')
+  const [ checked,setChecked]= useState('')
+  const [ check,setCheck]= useState('')
+  const [ teste,setTeste]= useState([])
+ // setCarne()
+  console.log(checked)
+  console.log(check)
+  console.log(teste)
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  const [value, setValue] = useState([1, 3]);
-  const handleChange = (val) => setValue(val);
+
+  const handleAdd = (event,teste,checked) => {
+    event.preventDefault()
+    let result = itens.findIndex(item => item.name === teste)
+    console.log(result)
+    if (result >= 0) {
+      let list = itens
+      list[result].count ++
+      setNameItens([...list])
+      console.log([...list])
+    } else {
+      setNameItens([...itens, {
+        teste,
+        checked,
+        count
+      }])
+
+      console.log(totalPrice)
+    }
+   
+    setShow(false);
+  }
+  const handleShow = (event, name, price) => {
+    event.preventDefault()
+    setTeste(
+      name,
+      price
+    )
+    setShow(true);
+    }
 
   const customerRequest = (event, name, price) => {
     event.preventDefault()
@@ -39,7 +74,6 @@ const Menu = () => {
       console.log(totalPrice)
     }
     }
-   
 
     const deleteItem = (event, name) => {
       event.preventDefault()
@@ -57,10 +91,7 @@ const Menu = () => {
 
 let totalPrice = itens.reduce((total, item)=> (total + item.price * item.count) , 0 )
 
-/*const carnes = ()=>{
- setOption('frango');
- 
-}*/
+
   return (
     <>
       <div className='center'>
@@ -119,7 +150,7 @@ let totalPrice = itens.reduce((total, item)=> (total + item.price * item.count) 
 
           <Accordion.Collapse eventKey="1">
             <Card.Body className='sectorCardBody'>Hamburguer simples R$10,00
-          <BtnP type='button' className='btn btn-lg btn-warning btnFood' onClick={handleShow}>
+          <BtnP type='button' className='btn btn-lg btn-warning btnFood' onClick={ (e) => handleShow(e, 'Hamburguer simples', 10)} >
         Adicionar
       </BtnP>
             </Card.Body>
@@ -260,25 +291,57 @@ let totalPrice = itens.reduce((total, item)=> (total + item.price * item.count) 
         </Modal.Header>
         <Modal.Body>Escolha seu sabor.</Modal.Body>
         <Modal.Body>
-        <ToggleButtonGroup type="checkbox" value={value} onChange={handleChange}>
-      <ToggleButton variant='warning sizeModal' size='lg' value='frango'>Frango</ToggleButton>
-      <ToggleButton variant="dark sizeModal" value='bovina'>Bovina</ToggleButton>
-      <ToggleButton variant='warning sizeModal'value='vegetariano'>Vegetariano</ToggleButton>
-    </ToggleButtonGroup>
+
+        <Form>
+  <Form.Check 
+    type="switch"
+    id="frango"
+    label="Frango"
+    onClick={() => setChecked('frango')}
+  />
+   <Form.Check 
+    type="switch"
+    id="carne "
+    label="Carne bovina"
+    
+    onChange={() => setChecked('carne')}
+  />
+  <Form.Check 
+    type="switch"
+    id="Vegetariano"
+    label="Vegetariano"
+  
+    onClick={() => setChecked('veg')}
+    //onClick={ (e) => customerRequest(e, 'Batata frita', 5)
+  />
+</Form>
         </Modal.Body>
         <Modal.Body>Quer adicionar por mais R$1,00?</Modal.Body>
         <Modal.Body>
-        <ToggleButtonGroup type="checkbox" value={value} onChange={handleChange}>
-      <ToggleButton variant='warning sizeModal'value='ovo'>Ovo</ToggleButton>
-      <ToggleButton variant="dark sizeModal"value='queijo'>Queijo</ToggleButton>
-      
-    </ToggleButtonGroup>
+        <Form>
+  <Form.Check 
+    type="switch"
+    id="ovo"
+    label="Ovo"
+    
+ 
+    onClick={() => setCheck('ovo')}
+  />
+   <Form.Check 
+    type="switch"
+    id="queijo"
+    label="Queijo"
+   
+
+    onClick={() => setCheck('queijo')}
+  />
+</Form>
         </Modal.Body>
         <Modal.Footer>
           <BtnP variant="secondary sizeModal" onClick={handleClose}>
             Cancelar
           </BtnP>
-          <BtnP variant="warning sizeModal" onClick={handleClose}>
+          <BtnP variant="warning sizeModal" onClick={handleAdd }>
             Adicionar
           </BtnP>
         </Modal.Footer>
