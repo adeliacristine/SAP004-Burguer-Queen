@@ -208,9 +208,9 @@ const Menu = (props) => {
   </div>
 <div className='count'>
 <ul>
-        {itens.map((item)=>{         
+        {itens.map((item, index)=>{         
           return(
-            <li kay ={item.count}>
+            <li key ={index}>
               {item.count}
               <BtnP className='btn btn-lg btn-warning btnFood' onClick={decrement}>X</BtnP>
             </li>
