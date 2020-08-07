@@ -7,7 +7,7 @@ const Pedidos = () => {
     <div className=' pedidos'>
       <h2>Próximo pedido à ser preparado</h2>
       <div className='bg-ligth d-flex '>
-        <BtnP>Pedido pronto</BtnP>
+        <BtnP>Pedido pronto</BtnP> 
       </div>
 
       <h2>Pedidos Prontos</h2>

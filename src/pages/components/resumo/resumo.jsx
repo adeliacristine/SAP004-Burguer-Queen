@@ -7,16 +7,18 @@ import '../input/input.css'
 import '../label/label.css'
 import { Form } from 'react-bootstrap'
 import './resumo.css'
+import '../../../App.css'
 
 const Resumo = ({order, clearItens, total}) => {
   
   const [name, setName] = useState ('')
   const [table, setTable] = useState('')
+  const [info, setInfo] = useState('')
 
   const sendOrder = (event) => {
     event.preventDefault()
     if (!name || !table) {
-      alert('Preencha os campos')
+      setInfo('Preencha todos os campos.')
     } else {
     const clientOrder = firebaseConfig.firestore().collection('orders')
       clientOrder
@@ -29,29 +31,14 @@ const Resumo = ({order, clearItens, total}) => {
         setName('')
         setTable('')
         clearItens()
-        alert('Pedido salvo com sucesso')
+        setInfo('Pedido enviado para a cozinha.')
     }
-  }
-
-  console.log(order);
-  console.log(total)
-
-  const [menu, setMenu] = useState('')
-  //console.log('pedido enviado')
-  console.log(menu)
-
- 
+  } 
   
   return (
     <>
     
-    <Form className='form' >  {/* onSubmit={function handleSubmit(event){
-      event.preventDefault();
-      console.log('testando o form')
-      setMenu([
-        ...menu
-      ]);
-    }} */}
+    <Form className='form' >  
       <Form.Group >
         <Form.Label className='label'>Nome </Form.Label>
         <Form.Control className='input' type="text" value={name} onChange={e => setName(e.target.value)} />
@@ -64,6 +51,9 @@ const Resumo = ({order, clearItens, total}) => {
       Confirmar R${total},00
   </BtnP>
     </Form>
+    <div className='msgError'>
+        <p>{info}</p>
+      </div>
 </>
   )
 }
