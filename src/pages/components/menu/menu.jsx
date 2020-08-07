@@ -80,6 +80,11 @@ const Menu = () => {
       setNameItens(newItens);
     }
   };
+  
+  const clearItens = () => {
+    setNameItens([])
+  }
+
   let totalPrice = itens.reduce(
     (total, item) => total + item.price * item.count,0);
   return (
@@ -230,9 +235,9 @@ const Menu = () => {
           </div>
           <div className="count">
             <ul>
-              {itens.map((item) => {
+              {itens.map((item, index) => {
                 return (
-                  <li kay={item.count}>
+                  <li kay={index}>
                     {item.count}
                     <BtnP className="btn btn-lg btn-warning btnFood"onClick={(e) => deleteItem(e, item.name)}>X</BtnP>
                   </li>
@@ -241,7 +246,15 @@ const Menu = () => {
             </ul>
           </div>
         </div>
-            <Resumo order={itens} total={totalPrice} />
+        <div>
+          <div className="count">
+            <h2>Total</h2>
+            <h2>R${totalPrice},00</h2>
+          </div>
+          <div>
+            <Resumo order={itens} total={totalPrice} clearItens={clearItens}  />
+          </div>
+        </div>
       </div>
 
       <Modal show={show}>
