@@ -5,10 +5,9 @@ import '../label/label.css'
 import { Form } from 'react-bootstrap'
 import './resumo.css'
 
-
-
-const Resumo = ({order}) => {
+const Resumo = ({order, total}) => {
   console.log(order);
+  console.log(total)
 
   const [menu, setMenu] = useState('')
   //console.log('pedido enviado')
@@ -39,7 +38,7 @@ const Resumo = ({order}) => {
         <Form.Control className='input' type="number"  onChange={e => RequestMenu(e.target.value)} />
       </Form.Group>
       <BtnP variant="warning btnLogCad" type="submit" onClick={Resumo}>
-        Enviar
+      Confirmar R${total},00
   </BtnP>
     </Form>
   
