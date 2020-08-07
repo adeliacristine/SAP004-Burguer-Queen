@@ -26,7 +26,8 @@ const Resumo = ({order, clearItens, total}) => {
         .set({
           name,
           table,
-          order
+          order,
+          status: 'Em Andamento'
         })
         setName('')
         setTable('')
