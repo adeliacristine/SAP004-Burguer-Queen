@@ -1,13 +1,39 @@
 import React, {useState} from 'react'
+import { firebaseConfig } from '../../../plugins/firebaseConfig'
+import 'firebase/firestore'
+
 import BtnP from '../button/button'
 import '../input/input.css'
 import '../label/label.css'
 import { Form } from 'react-bootstrap'
+import { Alert } from 'react-bootstrap'
 import './resumo.css'
 
+const Resumo = ({order, clearItens}) => {
+  
+  const [name, setName] = useState ('')
+  const [table, setTable] = useState('')
 
+  const sendOrder = (event) => {
+    event.preventDefault()
+    if (!name || !table) {
+      alert('Preencha os campos')
+    } else {
+    const clientOrder = firebaseConfig.firestore().collection('orders')
+      clientOrder
+        .doc()
+        .set({
+          name,
+          table,
+          order
+        })
+        setName('')
+        setTable('')
+        clearItens()
+        alert('Pedido salvo com sucesso')
+    }
+  }
 
-const Resumo = ({order}) => {
   console.log(order);
 
   const [menu, setMenu] = useState('')
@@ -18,7 +44,7 @@ const Resumo = ({order}) => {
     setMenu(element)
     console.log(element)
     console.log()
-   /* props.saveMenu(element)*/
+  /* props.saveMenu(element)*/
   }
   return (
     <>
@@ -32,21 +58,18 @@ const Resumo = ({order}) => {
     }} */}
       <Form.Group >
         <Form.Label className='label'>Nome </Form.Label>
-        <Form.Control className='input' type="text"  onChange={e => RequestMenu(e.target.value)} />
+        <Form.Control className='input' type="text" value={name} onChange={e => setName(e.target.value)} />
       </Form.Group>
       <Form.Group >
         <Form.Label className='label'>Mesa</Form.Label>
-        <Form.Control className='input' type="number"  onChange={e => RequestMenu(e.target.value)} />
+        <Form.Control className='input' type="number" value={table} onChange={e => setTable(e.target.value)} />
       </Form.Group>
-      <BtnP variant="warning btnLogCad" type="submit" onClick={Resumo}>
+      <BtnP variant="warning btnLogCad" type="submit" onClick={sendOrder}>
         Enviar
   </BtnP>
     </Form>
-  
-
 </>
-
-
   )
 }
+
 export default Resumo

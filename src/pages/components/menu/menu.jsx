@@ -97,6 +97,10 @@ const Menu = () => {
       setNameItens(newItens);
     }
   };
+  
+  const clearItens = () => {
+    setNameItens([])
+  }
 
   let totalPrice = itens.reduce(
     (total, item) => total + item.price * item.count,
@@ -370,7 +374,7 @@ const Menu = () => {
             <h2>R${totalPrice},00</h2>
           </div>
           <div>
-            <Resumo order={itens}  />
+            <Resumo order={itens} clearItens={clearItens}  />
           </div>
         </div>
       </div>
