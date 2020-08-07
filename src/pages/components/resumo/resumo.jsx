@@ -6,7 +6,6 @@ import BtnP from '../button/button'
 import '../input/input.css'
 import '../label/label.css'
 import { Form } from 'react-bootstrap'
-import { Alert } from 'react-bootstrap'
 import './resumo.css'
 
 const Resumo = ({order, clearItens}) => {
@@ -25,7 +24,8 @@ const Resumo = ({order, clearItens}) => {
         .set({
           name,
           table,
-          order
+          order,
+          status: 'Em Andamento'
         })
         setName('')
         setTable('')
