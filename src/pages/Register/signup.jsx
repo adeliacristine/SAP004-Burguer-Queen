@@ -25,8 +25,6 @@ export default () => {
     let   [errorMsg, setErrorMsg] = useState('')
     const [errorPass, setErrorPass] = useState('')
 
-  
-
     const createLogin = (event) => {
       event.preventDefault()
       if (password !== confirmPassword) {
@@ -90,7 +88,7 @@ export default () => {
         </Form.Group>
        
 
-       <BtnP   variant=" btn-warning btnLogCad" type="submit" onClick={createLogin}>Cadastra
+       <BtnP   variant=" btn-warning btnLogCad" type="submit" onClick={createLogin}>Cadastrar
   </BtnP> 
  
       </Form>
