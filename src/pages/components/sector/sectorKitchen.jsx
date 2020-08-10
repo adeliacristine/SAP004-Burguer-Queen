@@ -2,8 +2,8 @@ import React, {useState} from 'react'
 import BtnP from '../button/button'
 import './sector.css'
 import Cooking from '../Preparando/preparando'
-//import Pedidos from '../pedidos/pedidos'
-import Ready from '../pedidosProntos/ready'
+import Pedidos from '../pedidos/pedidos'
+
 
 const Sector =()=>{
 const [kitchen, setKitchen] = useState('');
@@ -38,7 +38,7 @@ const showOrders=()=>{
 				</div>
 				
 			)}{ historic &&(
-			<Ready />
+			<Pedidos />
 			)
 		}
 		</div>

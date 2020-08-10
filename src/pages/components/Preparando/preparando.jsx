@@ -15,17 +15,25 @@ const Cooking = () => {
   useEffect(() => {
     firebaseConfig.firestore().collection('orders').get()
       .then((function(querySnapshot){
-        setOrder(querySnapshot.docs.map((i) => ({...i.data()})))
+        setOrder(querySnapshot.docs.map((i) => ({...i.data(), idDoc: i.id})).filter(pedido =>{return(
+          pedido.status === "Em Andamento"
+        )}))
+       
   }))
 }, []);
 
-const Ready=()=>{
-  firebaseConfig.firestore().collection('orders').set({
+console.log(order)
+const Ready=(idStatus)=>{
+  firebaseConfig.firestore().collection('orders').doc(idStatus).update({
     status:'Pedido Pronto'
-  }).then(console.log('stauts pronto')).catch(console.log('deu ruim'))
-}
-
-
+  })
+  .then(docRef => {
+  setOrder(order.filter(pedido => {return(pedido.idDoc !== idStatus)})) }
+  )
+   .catch(error => {
+     console.log('deu erro:', error)
+    })
+  }
   return (
     <>
         <h2 className='nextRequest'>Próximo pedido à ser preparado</h2>
@@ -50,7 +58,7 @@ const Ready=()=>{
                         </li>
                       )
                     })}
-                    <BtnP variant="warning button" onClick={Ready}>Pedido pronto</BtnP>
+                    <BtnP variant="warning button" onClick={() => Ready(i.idDoc)}>Pedido pronto</BtnP>
                     <Card.Footer className="time">Tempo</Card.Footer>
                   </ul>
                 </li>
