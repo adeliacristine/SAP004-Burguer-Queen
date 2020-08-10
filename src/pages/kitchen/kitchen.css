@@ -5,3 +5,42 @@
 	padding:2px;
 	text-align: center;
 }
+.pedido{
+	margin-left: 15%;
+    margin-top: 2%;
+    background-color: #d4d9dd;
+    text-align: center;
+    padding: 10px;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    font-size: 30px;
+}
+.li{
+	border: solid black 5px;
+}
+.title{
+	background-color: orange;
+    border-bottom: solid black 5px;
+}
+.nextRequest{
+	background-color: orange;
+    border-bottom: solid black 5px;
+	height: 50px;
+	text-align: center;
+}
+.customer{
+	font-size: 30px;
+    border: solid black 2px;
+}
+.time{
+	background-color: #ffa50094;
+	color: black;
+    font-size: 30px;
+}
+.button{
+	margin-bottom: 23px;
+    font-size: 30px;
+}
