@@ -3,18 +3,27 @@ import BtnP from '../button/button'
 import Menu from '../menu/menu'
 import './sector.css'
 import Pedidos from '../pedidos/pedidos'
+import Ready from '../pedidosProntos/ready'
 
 const Sector =()=>{
 const [hall, setHall] = useState('');
-const [kitchen, setKitchen] = useState('');
+const [ready, setready] = useState('');
+const [delivery, setDelivery] =useState('');
 
 const showMenu =()=>{
 	setHall(true);
-	setKitchen(false);
+	setready(false);
+	setDelivery(false);
 }
 const showOrders=()=>{
 	setHall(false);
-	setKitchen(true);
+	setready(true);
+	setDelivery(false);
+}
+const showRequest=()=>{
+	setHall(false);
+	setready(false);
+	setDelivery(true);
 }
 
 	return (
@@ -24,7 +33,9 @@ const showOrders=()=>{
 		<BtnP type='button' className='btn btn-lg btn-light btnHall' onClick={function handleButton (){
 			showMenu()}} >Meus pedidos</BtnP>
 		<BtnP type='button'className='btn btn-lg btn-light btnHall' onClick={function handleButton (){
-			showOrders()}} >Pedidos Enviados</BtnP>
+			showOrders()}} >Pedidos Prontos</BtnP>
+		<BtnP type='button'className='btn btn-lg btn-light btnHall' onClick={function handleButton (){
+			showRequest()}} >Pedidos Entregues</BtnP>
 		</div>
 		
 			{ hall && (
@@ -32,10 +43,12 @@ const showOrders=()=>{
 					<Menu />
 				</div>
 				
-			)}{ kitchen &&(
-			<Pedidos />
+			)}{ ready &&(
+			<Ready />
 			)
-		}
+		}{ delivery &&(
+			<Pedidos />
+			)}
 		</div>
 		)}
 
