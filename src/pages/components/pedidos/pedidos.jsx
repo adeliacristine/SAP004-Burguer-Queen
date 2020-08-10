@@ -42,10 +42,6 @@ const Pedidos = () => {
         })}
       </ul>
       <div className='bg-ligth d-flex '>
-<<<<<<< HEAD
-        <BtnP>Pedido pronto</BtnP> 
-=======
->>>>>>> 0f0e2c7029dc292664cc5237f6f744faf2b54148
       </div>
 
       <h2>Pedidos Prontos</h2>
