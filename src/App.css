@@ -8,7 +8,9 @@
   .App {
     text-align: center;
   }
- 
+ body{
+  background:gray
+ }
   .color{
     background:gray  }
 
