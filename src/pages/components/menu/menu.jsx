@@ -21,7 +21,7 @@ const Menu = () => {
     event.preventDefault();
     let result = itens.findIndex(
       (item) => item.name === request.name && item.add === request.add);
-    console.log(result)
+    
     if (result >= 0) {
       let list = itens;
       list[result].count++;
@@ -51,7 +51,7 @@ const Menu = () => {
   const customerRequest = (event, name, price) => {
     event.preventDefault();
     let result = itens.findIndex((item) => item.name === name);
-    console.log(result);
+    
     if (result >= 0) {
       let list = itens;
       list[result].count++;
