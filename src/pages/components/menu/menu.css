@@ -1,57 +1,59 @@
-.sectorCard{
+.sectorCard {
 	display: flex;
 	background-color: gray;
 	color:white;
 	font-size: 20px;
 }
-.sectorCardBody{
+
+.sectorCardBody {
 	display: flex;
-    justify-content: space-between;
-    background-color: #8080804d;
-    color: black;
-    font-size: 22px;
-    border-bottom: 2px solid orange;
-    padding: 4px;
+  justify-content: space-between;
+  background-color: #8080804d;
+  color: black;
+  font-size: 22px;
+  border-bottom: 2px solid orange;
+  padding: 4px;
 }
 
-.sectorCardName{
+.sectorCardName {
 	background-color:orange;
 	color:black;
 	font-size: 30px;
 	padding:2px;
 }
- .resumo{
-	 display: flex;
-	 justify-content: space-around;
-	 font-size:30px;
-	 color: black;
- }
- .resumoItens{
+
+.resumo {
+	display: flex;
+	justify-content: space-around;
+	font-size:30px;
+	color: black;
+}
+
+.resumoItens {
 	display: flex;
 	justify-content: space-around;
 	font-size:30px;
 	color: black;
 	flex-direction: column;
-	
 }
- .title{
+
+.title {
 	text-align: center;
-    background-color: orange;
- }
- /*.center{
+	background-color: orange; 
+}
+
+.count {
 	display: flex;
-   
- }*/
- .count{
-	 display: flex;
-	 flex-direction: row;
-	 justify-content: space-around;
-	 margin:5px;
- }
- .modal{
+	flex-direction: row;
+	justify-content: space-around;
+	margin:5px;
+}
+
+.modal {
 	text-align: center;
-    font-size: 30px;
- }
- .sizeModal{
-	 font-size:30px;
- }
+  font-size: 30px;
+}
+
+.sizeModal {
+	font-size:30px;
+}

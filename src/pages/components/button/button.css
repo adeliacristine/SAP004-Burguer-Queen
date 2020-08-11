@@ -1,101 +1,106 @@
 .btnLogCad {
-		border-radius: 10px;
-		font-size: 25px;
-		/*height: 50px;*/
-		margin: 30px;	
-		width: 50%;
+	border-radius: 10px;
+	font-size: 25px;
+	margin: 30px;	
+	width: 50%;
 }
+
 button:hover {
 	color:black;
 	background-color: white;
 }
-.btnHall{
+
+.btnHall {
 	border-radius: 10px;
 	font-size: 25px;
 	height: 50px;
 	margin: 10px;	
 }
+
 @media only screen and (max-width:500px) {
 	.btnHall{
 		font-size:16px
 	}
 }
-.btnMenu{
+
+.btnMenu {
 	border-radius: 10px;
 	font-size: 25px;
 	height: 50px;
 	margin: 10px;	
 }
-.buttonEye{
+
+.buttonEye {
 	background-color: rgba(255, 255, 255, 0);
 	color: rgba(255, 255, 255, 0);
 	margin-left: -56px;
 	border-radius: 15px;
 }
-.uiButton{
+
+.uiButton {
 	background:rgba(255, 255, 255, 0);
 }
-.btnLogout{
+
+.btnLogout {
 	margin-top: 30%;
 	font-size: 25px;
 }
-.btnWarn{
+
+.btnWarn {
 	color: black;
-    background-color: #ffc107;
-    border-color: black;
+  background-color: #ffc107;
+  border-color: black;
 	border-radius: 10px;
 	font-size: 30px;
-    margin: 10px;
+  margin: 10px;
 }
-.btnWarn:hover{
+
+.btnWarn:hover {
 	color: black;
-    background-color: orange;
-    border-color: black;
+  background-color: orange;
+  border-color: black;
 	border-radius: 10px;
 	font-size: 30px;
-    margin: 10px;
-	
+  margin: 10px;
 }
+
 .btnHeader {
-	/* color: var(--white); */
-    /* border: -19px solid var(--white); */
-    /* box-sizing: border-box; */
-    /* cursor: pointer; */
-    /* padding: 16px 24px; */
-    /* font-style: normal; */
-    font-weight: bold;
-    /* font-size: 25px; */
-    /* outline: none; */
-    border-radius: 50%;
-    text-decoration: none;
-    display: inline-block;
-    transition: opacity .3s;
+  font-weight: bold;
+  border-radius: 50%;
+  text-decoration: none;
+  display: inline-block;
+  transition: opacity .3s;
 }
 
 .btnHeader:hover,
 .btnHeader:focus {
   opacity: .5;
 }
-.btnFood{
+
+.btnFood {
 	margin-right: 20px;
 }
-.btnCount{
+
+.btnCount {
 	height: 40px;
-    font-size: 20px;
-    margin: 4px
+  font-size: 20px;
+  margin: 4px
 }
-.btnLink{
+
+.btnLink {
 	font-size: 30px;
-    color: white;
-    margin: 30px;
-    background-color: transparent;
-    border-color: transparent;
+  color: white;
+  margin: 30px;
+  background-color: transparent;
+  border-color: transparent;
 }
+
 .btnLink:hover{
 	border-color: transparent;
-    background-color: transparent;
-    color: orange;
+  background-color: transparent;
+  color: orange;
 }
+
 .remove {
 	color: gray;
 }

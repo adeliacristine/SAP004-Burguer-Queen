@@ -1,12 +1,9 @@
-import React from 'react'
-import './button.css'
-import { Button } from 'react-bootstrap'
+import React from 'react';
+import { Button } from 'react-bootstrap';
+import './button.css';
 
+const BtnP = (props) => {
+  return <Button {...props} />;
+};
 
-const BtnP = props =>{
-	return(
-		<Button {...props}/>
-	)
-}
-
-export default BtnP
+export default BtnP;

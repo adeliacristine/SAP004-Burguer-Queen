@@ -1,10 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-const Historic =()=>{
-	return(
-<h2 className='sector'>Histórico de Pedidos</h2>
-        <div className='bg-ligth d-flex '>
-        </div>
-	)
-}
-export default Historic
+const Historic = () => {
+  return (
+    <div className='bg-ligth d-flex'>
+      <h2 className='sector'>Histórico de Pedidos</h2>
+    </div>
+  );
+};
+
+export default Historic;

@@ -1,8 +1,9 @@
-.link{
-	font-size: 30px;
+.link {
+    font-size: 30px;
     color: white;
     margin: 30px
 }
+
 a:hover {
     color: #ffc107;
 }
