@@ -1,11 +1,11 @@
 import React from 'react';
 import {Card} from 'react-bootstrap';
 import logo from '../../../images/Logo.png';
-import BtnP from '../button/button';
 import {firebaseConfig} from '../../../plugins/firebaseConfig'
 import "firebase/auth"
 import "firebase/firestore"
 import './header.css'
+import {GrLogout} from 'react-icons/gr'
 
 const singOut=(event)=>{
 	event.preventDefault()
@@ -29,7 +29,7 @@ function Header() {
 	<img className="imgLogo " src={logo} alt="logo"/>
 </div>
   <div>
- <BtnP type='button' onClick={singOut} size="lg" className='btnHeader btn-warning'>Sair</BtnP>  
+<GrLogout className='door'  onClick={singOut}/>  
   </div>
 	  
   </Card.Header> 

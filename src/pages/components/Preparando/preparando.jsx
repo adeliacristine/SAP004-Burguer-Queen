@@ -6,6 +6,8 @@ import { firebaseConfig } from '../../../plugins/firebaseConfig'
 import 'firebase/firestore'
 import { Card } from 'react-bootstrap'
 import BtnP from '../button/button'
+import {IoIosCalendar} from 'react-icons/io'
+import {RiTimerLine} from 'react-icons/ri'
 
 
 
@@ -13,7 +15,7 @@ const Cooking = () => {
   const [order, setOrder] = useState([])
 
   useEffect(() => {
-    firebaseConfig.firestore().collection('orders').get()
+    firebaseConfig.firestore().collection('orders').orderBy('time', 'asc').get()
       .then((function(querySnapshot){
         setOrder(querySnapshot.docs.map((i) => ({...i.data(), idDoc: i.id})).filter(pedido =>{return(
           pedido.status === "Em Andamento"
@@ -25,7 +27,11 @@ const Cooking = () => {
 console.log(order)
 const Ready=(idStatus)=>{
   firebaseConfig.firestore().collection('orders').doc(idStatus).update({
-    status:'Pedido Pronto'
+    status:'Pedido Pronto',
+    endTime: new Date().toLocaleTimeString(),
+   
+    
+   
   })
   .then(docRef => {
   setOrder(order.filter(pedido => {return(pedido.idDoc !== idStatus)})) }
@@ -34,6 +40,8 @@ const Ready=(idStatus)=>{
      console.log('deu erro:', error)
     })
   }
+
+    
   return (
     <>
         <h2 className='nextRequest'>Próximo pedido à ser preparado</h2>
@@ -51,15 +59,15 @@ const Ready=(idStatus)=>{
                       return (
                         <li key={index}  >
                           <Card.Body>
-                            <Card.Text>
-                              <p>Produto: {e.name}</p>   <p>Quantidade: {e.count}</p>
+                            <Card.Text >
+                              <p className='cardP'>{e.name}, {e.count}</p>
                             </Card.Text>
                           </Card.Body>
                         </li>
                       )
                     })}
-                    <BtnP variant="warning button" onClick={() => Ready(i.idDoc)}>Pedido pronto</BtnP>
-                    <Card.Footer className="time">Tempo</Card.Footer>
+                    <BtnP className="btnWarn" onClick={() => Ready(i.idDoc)}>Pedido pronto</BtnP>
+                    <Card.Footer className="time"><div><IoIosCalendar/> {i.date}</div><div><RiTimerLine/> {i.time}</div>  </Card.Footer>
                   </ul>
                 </li>
               )

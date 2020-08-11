@@ -7,12 +7,12 @@ import '../../App.css';
 import { Form } from 'react-bootstrap';
 
 
+
 export default (props) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   let [errorMsg, setErrorMsg] = useState('')
-
-
+ 
 
   const functionSetEmail = (element) => {
     setEmail(element)
@@ -35,6 +35,12 @@ export default (props) => {
         }
       })
   }
+
+ 
+   
+   
+   
+
   return (
     <>
 
@@ -47,14 +53,12 @@ export default (props) => {
 
         <Form.Group >
           <Form.Label className='label'>Password</Form.Label>
-          <Form.Control className='inputLogCad' type="password" value={password} onChange={e => setPassword(e.target.value)} />
-        </Form.Group>
-
+          <div className='d-flex'>
+          <Form.Control className='inputLogCad' type="password" value={password} onChange={e => setPassword(e.target.value)}/>
+          </div>
         
-
-        <BtnP variant="warning btnLogCad" type="submit" onClick={login}>
-          Login
-  </BtnP>
+        </Form.Group>
+        <BtnP variant="warning btnLogCad" type="submit" onClick={login}>Login</BtnP>
       </Form>
       <div className='msgError'>
         <p>{errorMsg}</p>

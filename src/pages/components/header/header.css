@@ -12,6 +12,11 @@
     padding-left: 5%;
     padding-right: 5%;
     background: black;
-	border-bottom: 2px solid orange;
+	border-bottom: 2px solid #ffc107;;
 	
+}
+.door{
+  background-color: #ffc107;;
+  font-size: 70px;
+  border: solid 5px #ffc107;;
 }

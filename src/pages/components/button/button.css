@@ -39,7 +39,23 @@ button:hover {
 	margin-top: 30%;
 	font-size: 25px;
 }
-
+.btnWarn{
+	color: black;
+    background-color: #ffc107;
+    border-color: black;
+	border-radius: 10px;
+	font-size: 30px;
+    margin: 10px;
+}
+.btnWarn:hover{
+	color: black;
+    background-color: orange;
+    border-color: black;
+	border-radius: 10px;
+	font-size: 30px;
+    margin: 10px;
+	
+}
 .btnHeader {
 	/* color: var(--white); */
     /* border: -19px solid var(--white); */

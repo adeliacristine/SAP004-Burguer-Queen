@@ -7,6 +7,10 @@ import "../button/button.css";
 import AccHeader from './componentes.jsx/CardHeader';
 import CardBody from './componentes.jsx/CardBody';
 import Collapse from './componentes.jsx/AccCollpse';
+import { GrTrash } from "react-icons/gr";
+
+
+
 
 const Menu = () => {
   const [itens, setNameItens] = useState([]);
@@ -239,22 +243,18 @@ const Menu = () => {
                 return (
                   <li kay={index}>
                     {item.count}
-                    <BtnP className="btn btn-lg btn-warning btnFood"onClick={(e) => deleteItem(e, item.name)}>X</BtnP>
+                 <GrTrash onClick={(e) => deleteItem(e, item.name)}/>
                   </li>
+             
+                  
                 );
               })}
             </ul>
           </div>
         </div>
-        <div>
-          <div className="count">
-            <h2>Total</h2>
-            <h2>R${totalPrice},00</h2>
-          </div>
           <div>
             <Resumo order={itens} total={totalPrice} clearItens={clearItens}  />
           </div>
-        </div>
       </div>
 
       <Modal show={show}>
