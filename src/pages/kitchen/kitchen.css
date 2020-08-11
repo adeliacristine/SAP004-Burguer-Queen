@@ -16,7 +16,8 @@
     justify-content: center;
     flex-direction: column;
     align-content: center;
-    font-size: 30px;
+	font-size: 30px;
+	color:black;
 }
 .li{
 	border: solid black 5px;
@@ -41,9 +42,15 @@
 .time{
 	background-color: #ffa50094;
 	color: black;
-    font-size: 30px;
+	font-size: 25px;
+	display: flex;
+    justify-content: space-between;
 }
 .button{
 	margin-bottom: 23px;
     font-size: 30px;
+}
+
+.cardP{
+	margin: -20px;
 }

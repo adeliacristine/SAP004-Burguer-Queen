@@ -27,7 +27,12 @@ const Resumo = ({order, clearItens, total}) => {
           name,
           table,
           order,
-          status: 'Em Andamento'
+          status: 'Em Andamento',
+          date: new Date().toLocaleDateString(),
+          time: new Date().toLocaleTimeString(),
+          endTime: null,
+          tempoDePreparo:null,
+          
         })
         setName('')
         setTable('')

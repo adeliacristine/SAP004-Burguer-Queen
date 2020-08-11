@@ -3,6 +3,8 @@ import { firebaseConfig } from '../../../plugins/firebaseConfig'
 import 'firebase/firestore'
 import './pedidos.css'
 import {Card} from 'react-bootstrap'
+import {IoIosCalendar} from 'react-icons/io'
+import {RiTimerLine, RiTimerFlashLine} from 'react-icons/ri'
 
 const Pedidos = () => {
 
@@ -13,7 +15,6 @@ const Pedidos = () => {
       .then((function(querySnapshot){
         setOrder(querySnapshot.docs.map((i) => ({...i.data(), idDoc: i.id})).filter(pedido =>{return(
           pedido.status === "Pedido Entregue "
-       
           )}))
         }))
       }, []);
@@ -36,14 +37,18 @@ console.log(order)
                       return (
                         <li key={index}  >
                           <Card.Body>
-                            <Card.Text>
-                              <p>Produto: {e.name}</p>   <p>Quantidade: {e.count}</p>
+                          <Card.Text >
+                              <p className='cardP'>{e.name}, {e.count}</p>
                             </Card.Text>
                           </Card.Body>
                         </li>
                       )
                     })}
-                    <Card.Footer className="time">Tempo</Card.Footer>
+                 <Card.Footer className="time">
+                    <div><IoIosCalendar/> {i.date}</div>
+                    <div><RiTimerLine/> {i.time} {''}
+                    <RiTimerFlashLine />{i.end}</div> 
+                     </Card.Footer>
                   </ul>
                 </li>
               )
