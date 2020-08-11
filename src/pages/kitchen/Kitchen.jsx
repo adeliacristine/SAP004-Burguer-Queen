@@ -13,7 +13,6 @@ const Kitchen = () => {
     <>
       <Header />
       <Sector />
-      
       <Footer />
     </>
   )

@@ -33,7 +33,10 @@
 }
 .customer{
 	font-size: 30px;
-    border: solid black 2px;
+	border: solid black 2px;
+	background-color: #ffa500b5;
+    font-weight: bold;
+    color: black;
 }
 .time{
 	background-color: #ffa50094;
