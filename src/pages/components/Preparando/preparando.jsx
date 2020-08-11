@@ -19,7 +19,7 @@ const Cooking = () => {
   }))
 }, []);
 
-const Ready=()=>{
+const Ready = () => {
   firebaseConfig.firestore().collection('orders').set({
     status:'Pedido Pronto'
   }).then(console.log('stauts pronto')).catch(console.log('deu ruim'))
@@ -56,7 +56,6 @@ const Ready=()=>{
                 </li>
               )
             })}
-           
           </Card>
         </ul>
 

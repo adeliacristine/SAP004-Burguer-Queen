@@ -13,7 +13,6 @@ const Pedidos = () => {
     firebaseConfig.firestore().collection('orders').get()
       .then((function(querySnapshot){
         setOrder(querySnapshot.docs.map((i) => ({...i.data()})))
-       
   }))
 }, []);
 console.log(order)
@@ -43,7 +42,7 @@ console.log(order)
               <p>Estatos do pedido:{i.status}</p>
               <p>Nome do Cliente: {i.name}</p>
               <p>Mesa:{i.table}</p>
-<ul>
+              <ul>
                 {i.order.map((e, index) => {
                   return(
                     <li key={index}>

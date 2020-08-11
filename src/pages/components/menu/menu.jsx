@@ -237,7 +237,7 @@ const Menu = () => {
             <ul>
               {itens.map((item, index) => {
                 return (
-                  <li kay={index}>
+                  <li key={index}>
                     {item.count}
                     <BtnP className="btn btn-lg btn-warning btnFood"onClick={(e) => deleteItem(e, item.name)}>X</BtnP>
                   </li>
