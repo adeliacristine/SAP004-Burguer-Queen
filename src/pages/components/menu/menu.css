@@ -22,14 +22,14 @@
 	padding:2px;
 }
 
-.resumo {
+.resume {
 	display: flex;
 	justify-content: space-around;
 	font-size:30px;
 	color: black;
 }
 
-.resumoItens {
+.resumeItens {
 	display: flex;
 	justify-content: space-around;
 	font-size:30px;

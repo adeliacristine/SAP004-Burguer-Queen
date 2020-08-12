@@ -8,7 +8,7 @@ import '../label/label.css';
 import './resumo.css';
 import '../../../App.css';
 
-const Resumo = ({ order, clearItens, total }) => {
+const Resume = ({ order, clearItens, total }) => {
   const [name, setName] = useState('');
   const [table, setTable] = useState('');
   const [info, setInfo] = useState('');
@@ -63,4 +63,4 @@ const Resumo = ({ order, clearItens, total }) => {
   );
 };
 
-export default Resumo;
+export default Resume;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import BtnP from '../button/button';
-import Resumo from '../resumo/resumo';
+import Resume from '../resumo/resumo';
 import { Card, Accordion, Modal, Form } from 'react-bootstrap';
 import './menu.css';
 import '../button/button.css';
@@ -287,16 +287,16 @@ const Menu = () => {
         </Card>
       </Accordion>
 
-      <h2 className='title'>Resumo</h2>
+      <h2 className='title'>Resume</h2>
 
-      <div className='resumo bg-dark'>
+      <div className='resume bg-dark'>
         <h2>Item</h2>
         <h2>Valor</h2>
         <h2>Quantidade</h2>
       </div>
 
       <div>
-        <div className='resumo'>
+        <div className='resume'>
           <div className='count'>
             <ul>
               {itens.map((item, index) => {
@@ -332,7 +332,7 @@ const Menu = () => {
           </div>
         </div>
         <div>
-          <Resumo order={itens} total={totalPrice} clearItens={clearItens} />
+          <Resume order={itens} total={totalPrice} clearItens={clearItens} />
         </div>
       </div>
 
