@@ -4,51 +4,49 @@
 	vertical-align:baseline;
 	list-style:none;
 	border:0
-  }
-  .App {
-    text-align: center;
-  }
- body{
-  background:gray
- }
-  .color{
-    background:gray  }
+}
+
+.App {
+  text-align: center;
+}
+
+body {
+  background:gray;
+}
+  
+.color {
+  background:gray;  
+}
 
 .background {
-    background: url(./images/background-login.jpg)no-repeat center center fixed;
-   /* background: url(./images/background2.jpeg)no-repeat center center fixed;*/
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
-  }
+  background: url(./images/background-login.jpg)no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
 
 .logo {
-    width: 40%;
-    height: 20%;
-    margin-left: 27%;
-  }
- 
+  width: 40%;
+  height: 20%;
+  margin-left: 27%;
+}
 
-
-.imgLogo{
+.imgLogo {
   width: 40%;
 }
 
-.msgError{
+.msgError {
   font-size: 24px;
-    text-align: center;
-    background-color: #ffc107c7;
+  text-align: center;
+  background-color: #ffc107c7;
 }
+
 #root {
- /* min-height: calc(100vh - var(--bodyPaddingTop));  */
- height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   background-color: gray;
 }
-
-
-
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

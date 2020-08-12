@@ -1,56 +1,63 @@
-.sector{
+.sector {
 	background:orange;
 	color:black;
 	font-size: 30px;
 	padding:2px;
 	text-align: center;
 }
-.pedido{
+
+.pedido {
 	margin-left: 15%;
-    margin-top: 2%;
-    background-color: #d4d9dd;
-    text-align: center;
-    padding: 10px;
-    width: 70%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-content: center;
+  margin-top: 2%;
+  background-color: #d4d9dd;
+  text-align: center;
+  padding: 10px;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
 	font-size: 30px;
 	color:black;
 }
-.li{
+
+.li {
 	border: solid black 5px;
 }
-.title{
+
+.title {
 	background-color: orange;
-    border-bottom: solid black 5px;
+  border-bottom: solid black 5px;
 }
-.nextRequest{
+
+.nextRequest {
 	background-color: orange;
-    border-bottom: solid black 5px;
+  border-bottom: solid black 5px;
 	height: 50px;
 	text-align: center;
 }
-.customer{
+
+.customer {
 	font-size: 30px;
 	border: solid black 2px;
 	background-color: #ffa500b5;
-    font-weight: bold;
-    color: black;
+  font-weight: bold;
+  color: black;
 }
-.time{
+
+.time {
 	background-color: #ffa50094;
 	color: black;
 	font-size: 25px;
 	display: flex;
-    justify-content: space-between;
-}
-.button{
-	margin-bottom: 23px;
-    font-size: 30px;
+  justify-content: space-between;
 }
 
-.cardP{
+.button {
+	margin-bottom: 23px;
+  font-size: 30px;
+}
+
+.cardP {
 	margin: -20px;
 }

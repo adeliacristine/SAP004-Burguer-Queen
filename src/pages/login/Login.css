@@ -1,21 +1,13 @@
 .box-auth {
   background-color: #000000c4;
-  /*color: white;*/
-  margin:auto;
+  margin: auto;
   opacity: 0.8;
- /* padding: 35px 0;
-  width: 70vw;*/
   border-radius: 10px;
 }
 
-.header-box-auth  {
+.header-box-auth {
   color: white;
-/*  font-size: 35px;*/
-/*  margin: 30px 20px;*/
-margin-top: 10px;
- /* text-decoration: underline;*/
-
-/*text-align:center;*/
+  margin-top: 10px;
 }
 
 
@@ -32,93 +24,3 @@ margin-top: 10px;
   text-align: center;
   text-decoration: underline;
 }
-
-/*@media only screen and (max-width:600px /*414px) {
-  .box-auth {
-    margin-left: 5vw;
-    width: 90vw;
-  }
-
-  .header-box-auth h3 {
-    font-size: 20px;
-  }
-
-  .form-auth {
-    display: flex;
-    flex-direction: column;
-    margin: 5px 2.5vw;
-  }
-
-  .form-auth label {
-    font-size: 20px;
-  }
-
-  .form-auth input {
-    height: 15px;
-  }
-
-  .form-auth button {
-    font-size: 20px;
-    height: 40px;
-    margin: 10px 0px;
-    margin-top: 15px;
-    width: 100%;
-  }
-
-  .forgot-password-auth {
-    margin: 0px;
-    font-size: 20px;
-  }
-}*/
-/* largura minima pra um tablet 600px menor que isso é smatphone, largunra maxima para um tablet
-960 px mair que isso já é um note book */
-/*@media only screen and (min-width:900px ) {
-  .logo {
-    height: 50vh;
-    margin: 150px 0;
-    width: 40vw;
-  }
-
- .background {
-    display: flex;
- }
- .container{
-  display: flex;
- 
- }
- .imgLogo , .box-auth{
-   align-self: center;
- }
-
-select{
-font-size: smaller;
- }
-  .box-auth {
-    width: 35%;
-  }
-
-  .header-box-auth h3 {
-    font-size: 25px;
-  }
-
-  .form-auth label {
-    font-size: 20px;
-  }
-
-  .form-auth input {
-    height: 15px;
-  }
-
-  .form-auth button {
-    font-size: 25px;
-    height: 40px;
-    margin-left: 6vw;
-    width: 250px;
-  }
-
-  .forgot-password-auth {
-    font-size: 20px;
-    text-align: center;
-  }
-}
-*/

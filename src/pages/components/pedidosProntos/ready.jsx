@@ -29,37 +29,37 @@ const Ready = () => {
   const Delivery = (idStatus) => {
     firebaseConfig
       .firestore()
-      .collection("orders")
+      .collection('orders')
       .doc(idStatus)
       .update({
-        status: "Pedido Entregue ",
+        status: 'Pedido Entregue',
       })
       .then((docRef) => {
         setOrder(
-          order.filter((pedido) => {
-            return pedido.idDoc !== idStatus;
+          order.filter((order) => {
+            return order.idDoc !== idStatus;
           })
         );
       })
       .catch((error) => {
-        console.log("deu erro:", error);
+        console.log(error);
       });
   };
 
   return (
     <>
-      <h2 className="nextRequest">Pedidos prontos para serem entregues.</h2>
+      <h2 className='nextRequest'>Pedidos prontos para serem entregues.</h2>
       <ul>
-        <Card className="pedido">
+        <Card className='requests'>
           {order.map((i, index) => {
             return (
-              <li key={index} className="li">
-                <Card.Header className="title">
-                  Estado do pedido : {i.status}{" "}
+              <li key={index} className='li'>
+                <Card.Header className='title'>
+                  Situação do pedido : {i.status}{' '}
                 </Card.Header>
                 <Card.Body>
-                  <Card.Title className="customer">
-                    Cliente : {i.name} , {""} Mesa: {i.table}{" "}
+                  <Card.Title className='customer'>
+                    Cliente : {i.name} , {''} Mesa: {i.table}{' '}
                   </Card.Title>
                 </Card.Body>
                 <ul>
@@ -68,7 +68,7 @@ const Ready = () => {
                       <li key={index}>
                         <Card.Body>
                           <Card.Text>
-                            <p className="cardP">
+                            <p className='cardP'>
                               {e.name}, {e.count}
                             </p>
                           </Card.Text>
@@ -76,16 +76,16 @@ const Ready = () => {
                       </li>
                     );
                   })}
-                  <BtnP className="btnWarn" onClick={() => Delivery(i.idDoc)}>
+                  <BtnP className='btnWarn' onClick={() => Delivery(i.idDoc)}>
                     Pedido Entregue
                   </BtnP>
 
-                  <Card.Footer className="time">
+                  <Card.Footer className='time'>
                     <div>
                       <IoIosCalendar /> {i.date}
                     </div>
                     <div>
-                      <RiTimerLine /> {i.time} {""}
+                      <RiTimerLine /> {i.time} {''}
                       <RiTimerFlashLine />
                       {i.endTime}
                     </div>
@@ -99,4 +99,5 @@ const Ready = () => {
     </>
   );
 };
+
 export default Ready;
