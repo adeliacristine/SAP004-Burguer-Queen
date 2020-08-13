@@ -287,7 +287,7 @@ const Menu = () => {
         </Card>
       </Accordion>
 
-      <h2 className='title'>Resume</h2>
+      <h2 className='title'>Resumo</h2>
 
       <div className='resume bg-dark'>
         <h2>Item</h2>

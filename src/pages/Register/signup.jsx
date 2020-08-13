@@ -98,7 +98,7 @@ export default () => {
           />
         </Form.Group>
 
-        <BtnP variant='btn-warning btnLogCad' type='submit'
+        <BtnP className='btn-warning btnLogCad' type='submit'
           onClick={createLogin}
         >
           Cadastrar

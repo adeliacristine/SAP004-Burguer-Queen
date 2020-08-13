@@ -5,6 +5,7 @@ import { IoIosCalendar } from 'react-icons/io';
 import { firebaseConfig } from '../../../plugins/firebaseConfig';
 import 'firebase/firestore';
 import './pedidos.css';
+import '../../kitchen/kitchen.css'
 
 const Orders = () => {
   const [order, setOrder] = useState([]);
@@ -29,7 +30,7 @@ const Orders = () => {
     <>
       <h2 className='nextRequest'>Próximo pedido à ser preparado</h2>
       <ul>
-        <Card className='requests'>
+        <Card className='request'>
           {order.map((i, index) => {
             return (
               <li key={index} className='li'>
@@ -62,7 +63,7 @@ const Orders = () => {
                     <div>
                       <RiTimerLine /> {i.time} {''}
                       <RiTimerFlashLine />
-                      {i.end}
+                      {i.endTime}
                     </div>
                   </Card.Footer>
                 </ul>

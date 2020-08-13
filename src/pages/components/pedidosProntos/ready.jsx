@@ -50,7 +50,7 @@ const Ready = () => {
     <>
       <h2 className='nextRequest'>Pedidos prontos para serem entregues.</h2>
       <ul>
-        <Card className='requests'>
+        <Card className='request'>
           {order.map((i, index) => {
             return (
               <li key={index} className='li'>

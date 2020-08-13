@@ -52,7 +52,7 @@ const Cooking = () => {
     <>
       <h2 className='nextRequest'>Próximo pedido à ser preparado</h2>
       <ul>
-        <Card className='requests'>
+        <Card className='request'>
           {order.map((i, index) => {
             return (
               <li key={index} className='li'>
