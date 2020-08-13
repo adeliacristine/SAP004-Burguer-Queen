@@ -1,68 +1,59 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+<img src="https://media.giphy.com/media/l0K4lPx8bvdbFMdGM/giphy.gif" width="200" heigth="200"> 
+</p>
 
-## Available Scripts
+## Índice
 
-In the project directory, you can run:
+* [1. Resumo do projeto](#1-resumo-do-projeto)
+* [2. Montagem do ambiente](#2-montagem-do-ambiente)
+* [3. Protótipo](#3-prototipo)
+* [4. Futuras Implementações](#4-futuras-implementacoes)
+* [5. Considerações Finais](5.consideracoes-finais)
 
-### `yarn start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 1. Resumo do Projeto
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+A aplicação foi para ajudar na gestão/controle de pedidos dos clientes em uma Hamburgueria. Os funcionários podem se cadastrar com seu e-mail, senha e cargo e serão redirecionados para seus cargos, onde o garçom/garçonete conseguirá anotar os pedidos dos clientes, enviar para a cozinha, visualizar os pedidos prontos e entregá-los. E o cozinheiro/auxiliar de cozinha podem visualizar os pedidos á serem feitos e informar ao salão que está pronto.
 
-### `yarn test`
+## 2. Montagem do Ambiente
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Esta aplicação foi desenvolvida em SPA, para uso em Tablets. 
 
-### `yarn build`
+Utilizamos:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* React JS 
+* React Router
+* React Hooks
+* React Icons 
+* React Bootstrap
+* Firebase
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## 3. Protótipo
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+O protótipo foi feito pelo Adobe XD e Canva.
 
-### `yarn eject`
+![](src/images/prototipo.login.jpeg)
+![](src/images/prototipo.salao.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+E abaixo o produto final.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![](src/images/final.login.jpeg)
+![](src/images/final.menu.jpeg)
+![](src/images/final.pedidos.jpeg)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 4. Futuras Implementações
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* Testes que cubram 100% de statements, functions, lines e branches.
 
-## Learn More
+## 5. Considerações Finais
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Esta aplicação foi desenvolvida por: 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Adélia Cristine : https://github.com/adeliacristine
 
-### Code Splitting
+Evellyn Thamires : https://github.com/EvellynThamires
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+<p align="center">
+<img src="https://media.giphy.com/media/xTiTnwj1LUAw0RAfiU/giphy.gif" width="200" heigth="200"> 
+</p>
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
